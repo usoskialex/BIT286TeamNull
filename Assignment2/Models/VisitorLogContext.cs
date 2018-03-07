@@ -15,9 +15,10 @@ namespace Assignment2.Models
         }
 
         // Base DB models. Add a DbSet for any other entity type that you want to include in your model. 
-        public virtual DbSet<User> Users { get; set; } 
+        public virtual DbSet<User> Users { get; set; } //by virtual it's not trying to update info
         public virtual DbSet<Program> Programs { get; set; }
         public virtual DbSet<Activity> Activities { get; set; }
+        //public virtual DbSet<Password> Password { get; set; }  //tried to create password as a model. changed to a viewmodel later
     }
 
 }

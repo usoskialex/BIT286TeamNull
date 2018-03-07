@@ -8,8 +8,11 @@ namespace Assignment2.Models
 {
     public class Program
     {
-        public int ProgramID { get; set; }
+        //model for dropdown list
+        public int ProgramID { get; set; } 
         [Display(Name = "Program Option")]
         public string ProgramName { get; set; }
+
+        public virtual Program ChoseProgram { get; set; }
     }
 }

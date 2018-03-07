@@ -8,6 +8,7 @@ namespace Assignment2.Models
 {
     public class Activity
     {
+        //model for logged user
         public int ActivityID { get; set; }
         public string ActivityName { get; set; }
         [DataType(DataType.Date)]
