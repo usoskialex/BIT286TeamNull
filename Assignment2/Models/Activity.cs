@@ -10,6 +10,7 @@ namespace Assignment2.Models
     {
         //model for logged user
         public int ActivityID { get; set; }
+        [Display(Name = "Name")]
         public string ActivityName { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

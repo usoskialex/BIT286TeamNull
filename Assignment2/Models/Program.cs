@@ -9,10 +9,10 @@ namespace Assignment2.Models
     public class Program
     {
         //model for dropdown list
+        [Key]
         public int ProgramID { get; set; } 
         [Display(Name = "Program Option")]
         public string ProgramName { get; set; }
 
-        public virtual Program ChoseProgram { get; set; }
     }
 }

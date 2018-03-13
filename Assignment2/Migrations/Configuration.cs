@@ -10,7 +10,7 @@ namespace Assignment2.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Assignment2.Models.VisitorLogContext context)

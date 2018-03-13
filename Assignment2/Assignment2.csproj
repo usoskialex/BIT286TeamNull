@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -138,8 +139,13 @@
     <Compile Include="Migrations\201802250412320_one.Designer.cs">
       <DependentUpon>201802250412320_one.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803130903459_Messages.cs" />
+    <Compile Include="Migrations\201803130903459_Messages.Designer.cs">
+      <DependentUpon>201803130903459_Messages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Program.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\VisitorLogContext.cs" />
@@ -147,6 +153,7 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\NewAccInfoViewModel.cs" />
     <Compile Include="ViewModels\PasswordViewModel.cs" />
+    <Compile Include="ViewModels\SendMessageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -189,6 +196,11 @@
     <Content Include="Views\Account\NewAccount.cshtml" />
     <Content Include="Views\Account\PasswordCreation.cshtml" />
     <Content Include="Views\Account\ConfirmationPage.cshtml" />
+    <Content Include="Views\Message\Create.cshtml" />
+    <Content Include="Views\Message\Delete.cshtml" />
+    <Content Include="Views\Message\Details.cshtml" />
+    <Content Include="Views\Message\Edit.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -205,6 +217,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802250412320_one.resx">
       <DependentUpon>201802250412320_one.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803130903459_Messages.resx">
+      <DependentUpon>201803130903459_Messages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

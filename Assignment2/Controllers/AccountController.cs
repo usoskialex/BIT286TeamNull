@@ -6,7 +6,10 @@ using System.Web;
 using System.Web.Mvc;
 using Assignment2.Models;
 using Assignment2.ViewModels;
-
+//BIT 285
+//Aliaksandr Usoski
+//Assignment 2
+//March 7, 2018
 
 namespace Assignment2.Controllers
 {
@@ -35,11 +38,6 @@ namespace Assignment2.Controllers
         {
             Activity Act = new Activity();
 
-            //if (user.UserName == null) //give an error and refreshes the page if the user didn't put the name
-            //{
-            //    return View("Login");
-            //}
-
             bool savedUser = db.Users.ToList().Any(m => m.Email == user.UserName && m.Password == user.Password);
 
             if (savedUser == true) //to check validity of the input
@@ -56,8 +54,10 @@ namespace Assignment2.Controllers
             else
             {
                 ModelState.Clear(); //to delete the input
-                ModelState.AddModelError("Error", "Sorry. Cannot find information about you in system!"); //display the error
+                ModelState.AddModelError("Error", "Sorry. " +
+                    "Cannot find information about you in system! You should create new account!"); //display the error
                 return View("Login");
+             
             }
 
         }
@@ -75,16 +75,12 @@ namespace Assignment2.Controllers
         [HttpPost]
         public ActionResult NewAccount(NewAccInfoViewModel newAcc)
         {
-
-            SessionUser().FirstName = newAcc.FirstName;
+            SessionUser().FirstName = newAcc.FirstName; //putting info about user into session
             SessionUser().LastName = newAcc.LastName;
             SessionUser().Email = newAcc.Email;
             SessionUser().ProgramID = newAcc.ProgramID;
             SessionUser().EmailUpdates = newAcc.EmailUpd;
 
-            //var model = new NewAccInfoViewModel(); //instance of a viewmodel
-            //model.ChosePrograms = db.Programs;
-            //return View(model);
             return RedirectToAction("PasswordCreation");
         }
 
@@ -92,7 +88,7 @@ namespace Assignment2.Controllers
         [HttpGet]
         public ActionResult PasswordCreation()
         {
-            PasswordViewModel passinst = new PasswordViewModel();
+            PasswordViewModel passinst = new PasswordViewModel(); //instance of the password viewmodel
 
             passinst.PassOptions = new List<string>();
             passinst.PassOptions.Add("Suggest A Password");
@@ -103,36 +99,58 @@ namespace Assignment2.Controllers
 
 
         [HttpPost]
-        public ActionResult PasswordCreation(PasswordViewModel pass, string submit)
+        public ActionResult PasswordCreation(PasswordViewModel pass)
         {
-            if(!string.IsNullOrEmpty(submit))
-            {
 
-            }
-            if (pass.Passwords != "Suggest A Password")
-            {
+                switch (Request["submit"]) //cases for different buttons
+                {
+                case "Generate Password":
+                        pass.PassOptions = new List<string>(); 
+                        List<string> passlist = passwordsL(pass);
 
-                SessionUser().Password = pass.Passwords;
+                    foreach (string password in passlist) 
+                    {
+                        pass.PassOptions.Add(password); //adding each password to a viewmodel
+                    }
+                    break;
 
-                db.Users.Add(SessionUser());
-                
-                db.SaveChanges();
+                case "Create Account":
 
-                DeleteTempUser();
+                    User temp = new User();
 
-                return View(pass);
-            }
+                    temp = SessionUser();
 
-            pass.PassOptions = new List<string>(); 
-            List<string> passlist = passwordsL(pass);
+                    temp.Password = pass.Passwords;
 
-            foreach (string password in passlist)
-            {
-                pass.PassOptions.Add(password);
-            }
-       
+                    db.Users.Add(temp); //adding user to the database
+
+                    db.SaveChanges(); //save database
+
+                    return RedirectToAction("ConfirmationPage"); //redirects to the confirmation page
+
+                }
+
             return View(pass);
         }
+
+        [HttpGet]
+        public ActionResult ConfirmationPage(User temp)
+        {
+            temp = SessionUser();
+            ViewBag.Message = temp.FirstName + " " + temp.LastName + ", " +
+                "Congrats! You registered in system!"; //displaying message
+            return View(db.Users); //showing the table with last name and passwords
+        }
+
+        [HttpPost]
+        public ActionResult ConfirmationPage()
+        {
+
+            return View(db.Users);
+        }
+
+
+
 
         private List<string> passwordsL(PasswordViewModel pass) //list for suggested passwords
         {
@@ -141,7 +159,7 @@ namespace Assignment2.Controllers
             string favColor = pass.Color.ToString();
 
 
-            char[] firstRand = pass.LastName.ToCharArray();
+            char[] firstRand = pass.LastName.ToCharArray(); 
             char[] secondRand = pass.Color.ToCharArray();
 
             for (int i = 0; i < 4; i++) //I think it'll be more secure then using simple string concatinations

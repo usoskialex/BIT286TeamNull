@@ -4,6 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+//BIT 285
+//Aliaksandr Usoski
+//Assignment 2
+//March 7, 2018
 
 namespace Assignment2.ViewModels
 {
@@ -24,12 +28,6 @@ namespace Assignment2.ViewModels
         public string Passwords { get; set; }
 
         [Display(Name = "Suggested Passwords: ")]
-        //public SelectList PassOptions { get; set; }
-
-
-        //public IEnumerable<SelectListItem> PassOptions { get; set; } //property that contains recommended passwords
-        //public string UserChoice { get; set; }
-
-        public List<string> PassOptions { get; set; }
+        public List<string> PassOptions { get; set; }   //property that contains recommended passwords
     }
 }

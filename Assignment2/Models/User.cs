@@ -13,9 +13,8 @@ namespace Assignment2.Models
         public int UserID { get; set; }
 
         [Display(Name = "Email Address")]
-        [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
-        ErrorMessage = "Please enter correct email address")]
-        [Required] 
+
+        [Required(ErrorMessage = "Please enter correct email address")] 
         public string Email { get; set; }
 
         [DataType(DataType.Password)]
@@ -38,7 +37,12 @@ namespace Assignment2.Models
         [Display(Name = "Logged In")]
         public bool LoggedIn { get; set; }
 
-        public ICollection<Program> ChoseProgram { get; set; }
+        public string Fullname { get { return string.Format("{0} {1}", FirstName, LastName); } }
 
+        // Property represent the entity relationship: "A User can be involved in one Program"
+        public virtual Program Programs { get; set; }
+
+        // Property represent the entity relationship: "A User can have many Activities"
+        public virtual ICollection<Activity> Activities { get; set; }
     }
 }
