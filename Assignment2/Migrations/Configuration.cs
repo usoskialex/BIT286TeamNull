@@ -35,12 +35,10 @@ namespace Assignment2.Migrations
                 FirstName = "Alex",
                 LastName = "Usoski",
                 EmailUpdates = true,
-                ProgramID = 1,
                 LoggedIn = false
 
             });
 
-                context.SaveChanges();
 
 
             //

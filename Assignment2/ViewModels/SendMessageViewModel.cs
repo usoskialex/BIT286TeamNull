@@ -15,6 +15,6 @@ namespace Assignment2.ViewModels
 
         public string Message { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public ICollection<User> Users { get; set; } //collection of users
     }
 }

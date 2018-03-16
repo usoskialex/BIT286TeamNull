@@ -15,10 +15,19 @@ namespace Assignment2.Controllers
     {
         private VisitorLogContext db = new VisitorLogContext();
 
+        
+
         // GET: Message
         public ActionResult Index()
         {
-            return View(db.Messages.ToList());
+
+            var tempUser = (User)Session["TempUser"];
+
+            var lastUser = db.Messages.ToList().Where(x => x.Receiver.UserID == tempUser.UserID); 
+
+
+
+            return View(lastUser);
         }
 
         // GET: Message/Details/5
@@ -39,35 +48,50 @@ namespace Assignment2.Controllers
         // GET: Message/Create
         public ActionResult Create()
         {
-            SendMessageViewModel instMess = new SendMessageViewModel(); //instance of the model class
+            SendMessageViewModel instMess = new SendMessageViewModel(); 
             
             instMess.Users = db.Users.ToList();
             //instMess.Users = new List<string>();
+            
+
+
             return View(instMess);
         }
+
 
         // POST: Message/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public ActionResult Create(/*[Bind(Include = "MessageID,MessageText, Re")]*/ SendMessageViewModel Message)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(/*[Bind(Include = "MessageID,MessageText, Re")]*/ SendMessageViewModel Mess)
         {
-            Message instMess = new Message();
-            
-            instMess.MessageText = Message.Message;
+            var instmessage = new Message();
+            var receiver = db.Users.SingleOrDefault(x => x.UserID == Mess.ReceiverID);
 
-            instMess.Receiver = Message.Receiver;
 
-            db.Messages.Add(instMess);
+
+            instmessage.MessageText = Mess.Message;
+
+            //instmessage.Receiver = receiver;
+
+            instmessage.Receiver = receiver;
+
+            instmessage.Sender = (User)Session["TempUser"];
+
+            db.Messages.Add(instmessage);
             db.SaveChanges();
 
-            Activity shit = new Activity();
 
-            shit.ActivityDate = DateTime.Now;
-            shit.ActivityName = Message.Message;
 
-            db.Activities.Add(shit);
+
+            Activity activityThatMakesMeCry = new Activity(); //the best inst name for this assignment
+
+            activityThatMakesMeCry.ActivityDate = DateTime.Now;
+
+            activityThatMakesMeCry.ActivityName = "Message was sent to" + (User)Session["TempUser"];
+
+            db.Activities.Add(activityThatMakesMeCry);
             db.SaveChanges();
 
             return RedirectToAction("Index");
@@ -138,5 +162,22 @@ namespace Assignment2.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        private User SessionUser() //storing temp user in session
+        {
+            if (Session["tempUser"] == null)
+            {
+                Session["tempUser"] = new User();
+            }
+            return (User)Session["tempUser"];
+        }
+
+        private void DeleteTempUser()
+        {
+            Session.Remove("tempUser");
+        }
+
+
     }
 }

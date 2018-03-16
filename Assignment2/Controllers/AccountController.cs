@@ -29,6 +29,18 @@ namespace Assignment2.Controllers
         [HttpGet] //prepare data for the view
         public ActionResult Login()
         {
+            int userIDnum = db.Users.Max(x => x.UserID); //to 
+
+            for(int y = 0; y < userIDnum; y++)
+            {
+                var log = db.Users.SingleOrDefault(x => x.LoggedIn == true && x.UserID == y);
+
+                if(log != null)
+                {
+                    log.LoggedIn = false;
+                    db.SaveChanges();
+                }
+            }
 
             return View();
         }
@@ -36,18 +48,24 @@ namespace Assignment2.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel user)
         {
+            
             Activity Act = new Activity();
 
-            bool savedUser = db.Users.ToList().Any(m => m.Email == user.UserName && m.Password == user.Password);
+            User savedUser = db.Users.SingleOrDefault(m => m.Email == user.UserName && m.Password == user.Password);
 
-            if (savedUser == true) //to check validity of the input
+            if (savedUser != null) //to check validity of the input
             {
                 Act.ActivityName = user.UserName; //store the logged name
                 Act.ActivityDate = DateTime.Now; //store current date and time
                 Act.IpAddress = Request.UserHostAddress;// store user's IP adress
 
+
                 db.Activities.Add(Act); //adding new user with name, login and ip into table
+              
+                savedUser.LoggedIn = true;
                 db.SaveChanges(); //saving new info in the database
+
+                Session["TempUser"] = savedUser;
 
                 return View("Index", db.Activities); //returning view and database
             }
@@ -75,10 +93,11 @@ namespace Assignment2.Controllers
         [HttpPost]
         public ActionResult NewAccount(NewAccInfoViewModel newAcc)
         {
+
             SessionUser().FirstName = newAcc.FirstName; //putting info about user into session
             SessionUser().LastName = newAcc.LastName;
             SessionUser().Email = newAcc.Email;
-            SessionUser().ProgramID = newAcc.ProgramID;
+            SessionUser().Programs = newAcc.Program;
             SessionUser().EmailUpdates = newAcc.EmailUpd;
 
             return RedirectToAction("PasswordCreation");

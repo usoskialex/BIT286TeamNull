@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment2.Models
 {
@@ -31,13 +32,14 @@ namespace Assignment2.Models
         [Display(Name = "Email Updates")]
         public bool EmailUpdates { get; set; }
 
-        [Display(Name = "Program ID")]
-        public int ProgramID { get; set; }
+        //[Display(Name = "Program ID")]
+        //[ForeignKeyAttribute("Programs")]
+        //public int ProgramID { get; set; }
 
         [Display(Name = "Logged In")]
         public bool LoggedIn { get; set; }
 
-        public string Fullname { get { return string.Format("{0} {1}", FirstName, LastName); } }
+        public string Fullname { get { return string.Format("{0}, {1}", LastName, FirstName); } }
 
         // Property represent the entity relationship: "A User can be involved in one Program"
         public virtual Program Programs { get; set; }
