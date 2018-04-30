@@ -4,11 +4,6 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-//BIT 285
-//Aliaksandr Usoski
-//Assignment 2
-//March 7, 2018
-
 namespace Assignment2.ViewModels
 {
     public class LoginViewModel
