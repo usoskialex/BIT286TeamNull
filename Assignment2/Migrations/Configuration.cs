@@ -10,7 +10,7 @@ namespace Assignment2.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Assignment2.Models.VisitorLogContext context)
@@ -20,11 +20,6 @@ namespace Assignment2.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-                context.Programs.AddOrUpdate(m => m.ProgramID,
-                  new Program() { ProgramName = "Web Developer Degree" },
-                  new Program() { ProgramName = "ETSP Degree" },
-                  new Program() { ProgramName = "Network Technology Degree" }
-                );
 
             context.Users.AddOrUpdate(m => m.UserID,
 
@@ -35,12 +30,21 @@ namespace Assignment2.Migrations
                 FirstName = "Alex",
                 LastName = "Usoski",
                 EmailUpdates = true,
-                ProgramID = 1,
                 LoggedIn = false
 
+            },
+
+            new User()
+            {
+                UserID = 3,
+                Email = "sa@sa.com",
+                Password = "sa",
+                FirstName = "Alex",
+                LastName = "Usoski",
+                EmailUpdates = true,
+                LoggedIn = false
             });
 
-                context.SaveChanges();
 
 
             //

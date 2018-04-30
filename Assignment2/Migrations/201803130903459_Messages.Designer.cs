@@ -7,18 +7,18 @@ namespace Assignment2.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class one : IMigrationMetadata
+    public sealed partial class Messages : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(one));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Messages));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802250412320_one"; }
+            get { return "201803130903459_Messages"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return null; }
+            get { return Resources.GetString("Source"); }
         }
         
         string IMigrationMetadata.Target
