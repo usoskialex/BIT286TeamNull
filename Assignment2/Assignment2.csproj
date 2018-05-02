@@ -152,6 +152,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Cat.jpg" />
+    <Content Include="Images\Dog.jpg" />
+    <Content Include="Images\dolphin.jpg" />
+    <Content Include="Images\fish.jpg" />
+    <Content Include="Images\frog.jpg" />
+    <Content Include="Images\giraffe.jpg" />
+    <Content Include="Images\hippo.jpg" />
+    <Content Include="Images\monkey.jpg" />
+    <Content Include="Images\turtle.jpg" />
     <Content Include="ReadMe.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
