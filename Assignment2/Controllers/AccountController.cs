@@ -20,6 +20,22 @@ namespace Assignment2.Controllers
             return View(db.Activities);
         }
 
+        //Get's the Create User Page
+        [HttpGet]
+        public ActionResult Create()
+        {
+            //Is this right??
+
+            return View();
+        }
+
+        //After student creates their account, will redirect to Login page
+        [HttpPost]
+        public ActionResult Create(CreateAccount user)
+        {
+            return RedirectToAction("Login");
+        }
+
         [HttpGet] //prepare data for the view
         public ActionResult Login()
         {
