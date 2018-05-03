@@ -77,7 +77,8 @@ namespace Assignment2.Controllers
 
                 Session["TempUser"] = savedUser;
 
-                return View("Index", db.Activities); //returning view and database
+                return RedirectToAction("Game", "Home");
+                /*return View("Index", db.Activities); *///returning view and database
             }
             else
             {

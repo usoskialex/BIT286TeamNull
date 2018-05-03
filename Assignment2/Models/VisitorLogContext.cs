@@ -18,7 +18,7 @@ namespace Assignment2.Models
         public virtual DbSet<User> Users { get; set; } 
         public virtual DbSet<Activity> Activities { get; set; }
 
-
+        public System.Data.Entity.DbSet<Assignment2.Models.Game> Games { get; set; }
     }
 
 }
