@@ -140,6 +140,10 @@
     <Compile Include="Migrations\201805030139193_updates.Designer.cs">
       <DependentUpon>201805030139193_updates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805030206241_game viewmodel.cs" />
+    <Compile Include="Migrations\201805030206241_game viewmodel.Designer.cs">
+      <DependentUpon>201805030206241_game viewmodel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Game.cs" />
@@ -148,6 +152,7 @@
     <Compile Include="Models\VisitorLogContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CreateAccount.cs" />
+    <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805030139193_updates.resx">
       <DependentUpon>201805030139193_updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805030206241_game viewmodel.resx">
+      <DependentUpon>201805030206241_game viewmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

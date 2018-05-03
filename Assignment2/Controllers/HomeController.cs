@@ -1,4 +1,5 @@
 ﻿using Assignment2.Models;
+using Assignment2.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Assignment2.Controllers
         public ActionResult Game()
 
         {
-            Game myGame = new Game();
+            GameViewModel myGame = new GameViewModel();
             Session["Number"] = myGame.Number;
             Session["Number2"] = myGame.Number2;
             Session["Number3"] = myGame.Number3;
@@ -29,7 +30,7 @@ namespace Assignment2.Controllers
 
         }
         [HttpPost]
-        public ActionResult Game(Game game)
+        public ActionResult Game(GameViewModel game)
         {
             Session["Guess"] = game.Guess;
             //game.UserName = "email@my.com";
