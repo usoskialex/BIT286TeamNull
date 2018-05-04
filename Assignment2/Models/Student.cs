@@ -19,6 +19,10 @@ namespace Assignment2.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+        [Required]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
         //This is the students pet name.
         [Required]
         [Display(Name = "Pal's Name")]

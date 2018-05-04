@@ -132,17 +132,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805030130321_game.cs" />
-    <Compile Include="Migrations\201805030130321_game.Designer.cs">
-      <DependentUpon>201805030130321_game.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805030139193_updates.cs" />
-    <Compile Include="Migrations\201805030139193_updates.Designer.cs">
-      <DependentUpon>201805030139193_updates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805030206241_game viewmodel.cs" />
-    <Compile Include="Migrations\201805030206241_game viewmodel.Designer.cs">
-      <DependentUpon>201805030206241_game viewmodel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
@@ -218,14 +207,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805030130321_game.resx">
-      <DependentUpon>201805030130321_game.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805030139193_updates.resx">
-      <DependentUpon>201805030139193_updates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805030206241_game viewmodel.resx">
-      <DependentUpon>201805030206241_game viewmodel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
