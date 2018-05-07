@@ -24,6 +24,8 @@ namespace Assignment2.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            //Is this right??
+
             return View();
         }
 
@@ -31,9 +33,7 @@ namespace Assignment2.Controllers
         [HttpPost]
         public ActionResult Create(CreateAccount user)
         {
-            db.SaveChanges();
-
-            return View("Login");
+            return RedirectToAction("Login");
         }
 
         [HttpGet] //prepare data for the view

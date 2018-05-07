@@ -8,7 +8,7 @@
 
 
 @using (Html.BeginForm()) 
-    {
+{
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
@@ -37,12 +37,10 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Login" class="btn btn-default" />
-                <div>@Html.ActionLink("New Student?", "Create")</div>
             </div>
         </div>
-        
     </div>
-    }
+}
 
 
 @section Scripts {
