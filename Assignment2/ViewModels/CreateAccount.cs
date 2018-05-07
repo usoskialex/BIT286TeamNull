@@ -17,13 +17,9 @@ namespace Assignment2.ViewModels
         [Required]
         public string LastName { get; set; }
 
-        [Display(Name = "User Name:")]
         [Required]
-        public string UserName { get; set; }
-
-        [Required]
-        [Display(Name = "Pal's Name:")]
+        [Display(Name = "Pal's Name")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        private string Password { get; set; }
     }
 }
