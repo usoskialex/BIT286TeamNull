@@ -34,7 +34,7 @@
         ViewBag.Title = "Game";
     }
 
-    <h1 class="center">Let's Play a Game! </h1>
+    <h1 class="center">@Session["PalsName"] Let's Play a Game! </h1>
     @{Html.BeginForm("Game", "Home", FormMethod.Post);
 
 

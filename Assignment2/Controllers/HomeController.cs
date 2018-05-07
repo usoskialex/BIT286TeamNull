@@ -16,9 +16,10 @@ namespace Assignment2.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult Game()
+        public ActionResult Game(Student student)
 
         {
+            Session["PalsName"] = student.Password;
             GameViewModel myGame = new GameViewModel();
             Session["Number"] = myGame.Number;
             Session["Number2"] = myGame.Number2;

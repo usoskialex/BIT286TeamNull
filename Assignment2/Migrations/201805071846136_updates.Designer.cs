@@ -13,7 +13,7 @@ namespace Assignment2.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201805030139193_updates"; }
+            get { return "201805071846136_updates"; }
         }
         
         string IMigrationMetadata.Source
