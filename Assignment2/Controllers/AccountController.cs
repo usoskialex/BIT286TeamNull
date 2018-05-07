@@ -61,7 +61,7 @@ namespace Assignment2.Controllers
             
             Activity Act = new Activity();
 
-            User savedUser = db.Users.SingleOrDefault(m => m.Email == user.UserName && m.Password == user.Password);
+            User savedUser = db.Users.FirstOrDefault(m => m.Email == user.UserName && m.Password == user.Password);
 
             if (savedUser != null) //to check validity of the input
             {
