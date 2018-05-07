@@ -196,6 +196,7 @@
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Home\Game.cshtml" />
+    <Content Include="Views\Account\StudentLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
