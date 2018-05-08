@@ -162,6 +162,7 @@
     <Content Include="Images\giraffe.jpg" />
     <Content Include="Images\hippo.jpg" />
     <Content Include="Images\monkey.jpg" />
+    <Content Include="Images\star.jpg" />
     <Content Include="Images\turtle.jpg" />
     <Content Include="ReadMe.txt" />
     <Content Include="Scripts\bootstrap.js" />
