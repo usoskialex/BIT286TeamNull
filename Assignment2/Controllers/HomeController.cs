@@ -15,6 +15,14 @@ namespace Assignment2.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Index(GameViewModel game)
+        {
+            
+            return RedirectToAction("Game");
+        }
+
         [HttpGet]
         public ActionResult Game(Student student)
 
