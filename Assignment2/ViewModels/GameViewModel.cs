@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace Assignment2.ViewModels
 {
     public class GameViewModel
-    {
+    { [Key]
+        public int GameId { get; set; }
         private Random _random = new Random();
         private int _number = 0;
         private int _number2 = 0;
