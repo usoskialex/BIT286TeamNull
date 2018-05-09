@@ -15,10 +15,22 @@ namespace Assignment2.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Index(GameViewModel game)
+        {
+            
+            return RedirectToAction("Game");
+        }
+
         [HttpGet]
         public ActionResult Game(Student student)
 
         {
+            //Get the current player from the Database
+            int id = Convert.ToInt32(Session["GameId"]);
+            Game currentGame = vl.Games.SingleOrDefault(g => g.GameId == id);
+
             Session["PalsName"] = student.Password;
             GameViewModel myGame = new GameViewModel();
             Session["Number"] = myGame.Number;
@@ -34,29 +46,36 @@ namespace Assignment2.Controllers
         public ActionResult Game(GameViewModel game)
         {
             Session["Guess"] = game.Guess;
-            //game.UserName = "email@my.com";
-            //game.LoginTime = DateTime.Now;
-            //game.IpAddress = Request.UserHostAddress;
+
+
+            //Get the current player from the Database
+            //int id = Convert.ToInt32(game.GameId);
+            //Game currentGame = vl.Games.SingleOrDefault(g => g.GameId == id);
+
+            //game.GameId = currentGame.GameId;
+
 
             if (Convert.ToUInt32(Session["Answer"]) == Convert.ToUInt32(Session["Guess"]))
             {
-                ViewBag.Message = "Great Job!";
+              
                 //add to total correct answers
                 game.TotalCorrect++;
-                //save to database
-                vl.SaveChanges();
+                //vl.Games.Add(currentGame);
+                ////save to database
+                //vl.SaveChanges();
                 Session["TotalCorrect"] = game.TotalCorrect;
                 //redirect to winning page with reward
                 return RedirectToAction("Index");
             }
             else
             {   //add to incorrect total answers
-                game.TotalIncorrect++;
+                //currentGame.TotalIncorrect++;
+                //vl.Games.Add(currentGame);
                 //save to database
                 vl.SaveChanges();
                 //replay game
                 ViewBag.Message = "Sorry, try again";
-                return View();
+                return View(game);
             }
 
 
