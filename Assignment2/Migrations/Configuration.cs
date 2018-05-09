@@ -1,5 +1,6 @@
 namespace Assignment2.Migrations
 {
+    using Assignment2.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -18,6 +19,36 @@ namespace Assignment2.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            context.Users.AddOrUpdate(m => m.UserID,
+
+           new User()
+           {
+               UserID = 1,
+               Email = "sa@sa.com",
+               Password = "sa",
+               FirstName = "Alex",
+               LastName = "Usoski",
+               EmailUpdates = true,
+               LoggedIn = false
+           });
+
+           context.Students.AddOrUpdate(m => m.StudentID,
+
+           new Student()
+            {
+                StudentID = 1,
+                FirstName = "Buddy",
+                LastName = "Friend",
+                Password = "Spot"
+            },
+
+            new Student()
+            {
+                StudentID = 2,
+                FirstName = "Alex",
+                LastName = "sasa@sa.su",
+                Password = "sasa"
+            });
         }
     }
 }
