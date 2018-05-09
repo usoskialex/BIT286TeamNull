@@ -39,13 +39,13 @@ namespace Assignment2.Controllers
         [HttpGet] //prepare data for the view
         public ActionResult Login()
         {
-            int userIDnum = db.Users.Max(x => x.UserID); 
+            int userIDnum = db.Users.Max(x => x.UserID);
 
-            for(int y = 0; y < userIDnum; y++)
+            for (int y = 0; y < userIDnum; y++)
             {
                 var log = db.Users.SingleOrDefault(x => x.LoggedIn == true && x.UserID == y);
 
-                if(log != null)
+                if (log != null)
                 {
                     log.LoggedIn = false;
                     db.SaveChanges();
@@ -58,7 +58,8 @@ namespace Assignment2.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel user)
         {
-            
+            User student = new User();
+
             Activity Act = new Activity();
 
             User savedUser = db.Users.FirstOrDefault(m => m.Email == user.UserName && m.Password == user.Password);
@@ -71,7 +72,7 @@ namespace Assignment2.Controllers
 
 
                 db.Activities.Add(Act); //adding new user with name
-              
+
                 savedUser.LoggedIn = true;
                 db.SaveChanges(); //saving new info in the database
 
@@ -80,6 +81,41 @@ namespace Assignment2.Controllers
                 return RedirectToAction("Game", "Home");
                 /*return View("Index", db.Activities); *///returning view and database
             }
+            else
+            {
+                ModelState.Clear(); //to delete the input
+                ModelState.AddModelError("Error", "Sorry. " +
+                    "Check the database for login and password"); //display the error
+                return View("Login");
+
+            }
+
+        }
+
+
+
+
+        [HttpGet] //Login page for the student
+        public ActionResult StudentLogin()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult StudentLogin(LoginViewModel user)
+        {
+            User student = new User();
+
+            var std = db.Students.Where(u => u.FirstName == user.UserName && u.Password == user.Password).FirstOrDefault();
+
+            if (std != null)
+            {
+                Session["StudentID"] = std.StudentID.ToString();
+                Session["FirstName"] = std.FirstName.ToString();
+                return RedirectToAction("Index");
+            }
+            
             else
             {
                 ModelState.Clear(); //to delete the input
