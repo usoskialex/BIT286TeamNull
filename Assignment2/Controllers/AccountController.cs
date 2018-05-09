@@ -24,7 +24,6 @@ namespace Assignment2.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            //Is this right??
 
             return View();
         }

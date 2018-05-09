@@ -18,8 +18,8 @@ namespace Assignment2.ViewModels
         public string LastName { get; set; }
 
         [Required]
-        [Display(Name = "Pal's Name")]
+        [Display(Name = "Pal's Name:")]
         [DataType(DataType.Password)]
-        private string Password { get; set; }
+        public string Password { get; set; }
     }
 }
