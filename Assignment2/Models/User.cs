@@ -32,8 +32,6 @@ namespace Assignment2.Models
         [Display(Name = "Email Updates")]
         public bool EmailUpdates { get; set; }
 
-
-
         [Display(Name = "Logged In")]
         public bool LoggedIn { get; set; }
 
