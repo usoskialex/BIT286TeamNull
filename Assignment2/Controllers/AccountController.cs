@@ -119,8 +119,7 @@ namespace Assignment2.Controllers
                 ModelState.Clear(); //to delete the input
                 ModelState.AddModelError("Error", "Sorry. " +
                     "Check the database for login and password"); //display the error
-                return View("StudLogin");
-             
+                return View("StudentLogin");
             }
 
         }
