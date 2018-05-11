@@ -1,35 +1,53 @@
 ﻿@model Assignment2.ViewModels.CreateAccount
+<!DOCTYPE html>
 
-@{
-    ViewBag.Title = "Create Account";
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login Page</title>
+    <style type="text/css">
+        body {
+            background-color: lightgrey;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    @{
+        ViewBag.Title = "Alex's change";
+    }
+
+    <h2>Create an Account</h2>
+
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(m => m.FirstName)
+            @Html.Editor("FirstName")
+        </div>
+        <div>
+            @Html.LabelFor(m => m.LastName)
+            @Html.Editor("LastName")
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Password)
+            @Html.Editor("PalsName")
+        </div>
+
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+        }
+
+    <div>
+        @Html.ActionLink("Return to Login", "Login")
+    </div>
+</body>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
-
-<h2>Create an Account</h2>
-
-@using (Html.BeginForm())
-{
-    <div>
-        @Html.LabelFor(m => m.FirstName)
-        @Html.Editor("FirstName")
-    </div>
-    <div>
-        @Html.LabelFor(m => m.LastName)
-        @Html.Editor("LastName")
-    </div>
-    <div>
-        @Html.LabelFor(m => m.UserName)
-        @Html.Editor("UserName")
-    </div>
-    <div>
-        @Html.LabelFor(m => m.Password)
-        @Html.Editor("Pal's Name")
-    </div>
-
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Submit" class="btn btn-default" />
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Return to Login", "Login")
-</div>
+</html>

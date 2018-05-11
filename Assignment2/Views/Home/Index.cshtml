@@ -1,5 +1,24 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿@model Assignment2.Models.Game
 
-<div><h1>Congratulations!</h1></div>
+@*@{
+    ViewBag.Title = "H";
+}*@
+
+    <div><h1>Great Work!</h1></div>
+    @{Html.BeginForm("Index", "Home", FormMethod.Post);
+   <p>     You have  @Session["TotalCorrect"] gold star</p>
+
+
+        for (int i = 1; i <= Convert.ToInt32(Session["TotalCorrect"]); i++)
+        {
+
+            <img src="~/Images/star.jpg" height="100" width="100" style="display: inline-block" alt="star" />
+            }
+        }
+<div class="large">
+
+        
+            <input type="submit" value="Play Again" class="btn btn-default" />
+        
+    
+</div>

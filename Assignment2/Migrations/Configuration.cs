@@ -31,6 +31,24 @@ namespace Assignment2.Migrations
                EmailUpdates = true,
                LoggedIn = false
            });
+
+           context.Students.AddOrUpdate(m => m.StudentID,
+
+           new Student()
+            {
+                StudentID = 1,
+                FirstName = "Buddy",
+                LastName = "Friend",
+                Password = "Spot"
+            },
+
+            new Student()
+            {
+                StudentID = 2,
+                FirstName = "Alex",
+                LastName = "sasa@sa.su",
+                Password = "sasa"
+            });
         }
     }
 }

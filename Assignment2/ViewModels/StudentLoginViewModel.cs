@@ -1,25 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace Assignment2.ViewModels
 {
-    public class CreateAccount
+    public class StudentLoginViewModel
     {
-        [DisplayName("First Name:")]
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-        [DisplayName("Last Name:")]
         [Required]
-        public string LastName { get; set; }
-
-        [Required]
-        [Display(Name = "Pal's Name:")]
         [DataType(DataType.Password)]
+        [Display(Name = "Pal's Name")]
         public string Password { get; set; }
+
+        public string Error { get; set; } // to display error on screen
+        //if there are no registered student in database
     }
 }

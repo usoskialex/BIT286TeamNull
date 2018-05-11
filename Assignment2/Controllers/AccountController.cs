@@ -20,32 +20,33 @@ namespace Assignment2.Controllers
             return View(db.Activities);
         }
 
-        //Get's the Create User Page
+        //Get's the Create Student Page
         [HttpGet]
         public ActionResult Create()
         {
+
             return View();
         }
 
         //After student creates their account, will redirect to Login page
         [HttpPost]
-        public ActionResult Create(CreateAccount user)
+        public ActionResult Create(Student student)
         {
+            db.Students.Add(student);
             db.SaveChanges();
-
-            return View("Login");
+            return RedirectToAction("Login");
         }
 
-        [HttpGet] //prepare data for the view
+        [HttpGet] //prepare data for the view for the teacher
         public ActionResult Login()
         {
-            int userIDnum = db.Users.Max(x => x.UserID); 
+            int userIDnum = db.Users.Max(x => x.UserID);
 
-            for(int y = 0; y < userIDnum; y++)
+            for (int y = 0; y < userIDnum; y++)
             {
                 var log = db.Users.SingleOrDefault(x => x.LoggedIn == true && x.UserID == y);
 
-                if(log != null)
+                if (log != null)
                 {
                     log.LoggedIn = false;
                     db.SaveChanges();
@@ -58,10 +59,11 @@ namespace Assignment2.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel user)
         {
-            
+            User student = new User();
+
             Activity Act = new Activity();
 
-            User savedUser = db.Users.SingleOrDefault(m => m.Email == user.UserName && m.Password == user.Password);
+            User savedUser = db.Users.FirstOrDefault(m => m.Email == user.UserName && m.Password == user.Password);
 
             if (savedUser != null) //to check validity of the input
             {
@@ -71,14 +73,13 @@ namespace Assignment2.Controllers
 
 
                 db.Activities.Add(Act); //adding new user with name
-              
+
                 savedUser.LoggedIn = true;
                 db.SaveChanges(); //saving new info in the database
 
                 Session["TempUser"] = savedUser;
 
-                return RedirectToAction("Game", "Home");
-                /*return View("Index", db.Activities); *///returning view and database
+                return View("Index", db.Activities); 
             }
             else
             {
@@ -86,7 +87,40 @@ namespace Assignment2.Controllers
                 ModelState.AddModelError("Error", "Sorry. " +
                     "Check the database for login and password"); //display the error
                 return View("Login");
-             
+
+            }
+
+        }
+
+
+
+
+        [HttpGet] //Login page for the student
+        public ActionResult StudentLogin()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult StudentLogin(Student user)
+        {
+           
+            var std = db.Students.Where(u => u.FirstName == user.FirstName && u.Password == user.Password).FirstOrDefault();
+
+            if (std != null)
+            {
+                Session["StudentID"] = std.StudentID.ToString();
+                Session["FirstName"] = std.FirstName.ToString();
+                return RedirectToAction("Game", "Home");
+            }
+            
+            else
+            {
+                ModelState.Clear(); //to delete the input
+                ModelState.AddModelError("Error", "Sorry. " +
+                    "Check the database for login and password"); //display the error
+                return View("StudentLogin");
             }
 
         }

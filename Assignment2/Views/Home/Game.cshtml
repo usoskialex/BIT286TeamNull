@@ -34,7 +34,7 @@
         ViewBag.Title = "Game";
     }
 
-    <h1 class="center">Let's Play a Game! </h1>
+    <h1 class="center">@Session["PalsName"] Let's Play a Game! </h1>
     @{Html.BeginForm("Game", "Home", FormMethod.Post);
 
 
@@ -47,7 +47,8 @@
         for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
         {
             Session["name"] = "fish pals";
-            <img src="~/Images/fish.jpg" height="100" width="100" style="display: inline-block" alt="fish" />}
+            <img src="~/Images/fish.jpg" height="100" width="100" style="display: inline-block" alt="fish" />
+        }
 
     }
 

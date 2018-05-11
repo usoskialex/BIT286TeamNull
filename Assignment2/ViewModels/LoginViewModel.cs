@@ -9,13 +9,14 @@ namespace Assignment2.ViewModels
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "User Name")]
+        [Display(Name = "First Name")]
         public string UserName { get; set; } 
 
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         
-        public string Error { get; set; } // to display error on screen if there are no registered user in database
+        public string Error { get; set; } // to display error on screen 
+        //if there are no registered user in database
     }
 }
