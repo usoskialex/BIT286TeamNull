@@ -77,8 +77,7 @@ namespace Assignment2.Controllers
 
                 Session["TempUser"] = savedUser;
 
-                return RedirectToAction("Game", "Home");
-                /*return View("Index", db.Activities); *///returning view and database
+                return View("Index", db.Activities); 
             }
             else
             {
@@ -104,15 +103,14 @@ namespace Assignment2.Controllers
         [HttpPost]
         public ActionResult StudentLogin(Student user)
         {
-            User student = new User();
-
+           
             var std = db.Students.Where(u => u.FirstName == user.FirstName && u.Password == user.Password).FirstOrDefault();
 
             if (std != null)
             {
                 Session["StudentID"] = std.StudentID.ToString();
                 Session["FirstName"] = std.FirstName.ToString();
-                return RedirectToAction("Index");
+                return RedirectToAction("Game", "Home");
             }
             
             else
@@ -120,7 +118,7 @@ namespace Assignment2.Controllers
                 ModelState.Clear(); //to delete the input
                 ModelState.AddModelError("Error", "Sorry. " +
                     "Check the database for login and password"); //display the error
-                return View("Login");
+                return View("StudLogin");
              
             }
 
