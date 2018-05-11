@@ -32,10 +32,11 @@ namespace Assignment2.Controllers
         [HttpPost]
         public ActionResult Create(CreateAccount user)
         {
+
             return RedirectToAction("Login");
         }
 
-        [HttpGet] //prepare data for the view
+        [HttpGet] //prepare data for the view for the teacher
         public ActionResult Login()
         {
             int userIDnum = db.Users.Max(x => x.UserID);
@@ -102,11 +103,11 @@ namespace Assignment2.Controllers
         }
 
         [HttpPost]
-        public ActionResult StudentLogin(LoginViewModel user)
+        public ActionResult StudentLogin(Student user)
         {
             User student = new User();
 
-            var std = db.Students.Where(u => u.FirstName == user.UserName && u.Password == user.Password).FirstOrDefault();
+            var std = db.Students.Where(u => u.FirstName == user.FirstName && u.Password == user.Password).FirstOrDefault();
 
             if (std != null)
             {
