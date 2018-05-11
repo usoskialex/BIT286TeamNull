@@ -9,7 +9,7 @@ namespace Assignment2.ViewModels
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "User Name")]
+        [Display(Name = "First Name")]
         public string UserName { get; set; } 
 
         [Required]
