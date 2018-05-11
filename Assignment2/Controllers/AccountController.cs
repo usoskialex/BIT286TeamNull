@@ -20,7 +20,7 @@ namespace Assignment2.Controllers
             return View(db.Activities);
         }
 
-        //Get's the Create User Page
+        //Get's the Create Student Page
         [HttpGet]
         public ActionResult Create()
         {
