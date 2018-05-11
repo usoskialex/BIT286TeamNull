@@ -27,9 +27,15 @@ namespace Assignment2.Controllers
         public ActionResult Game(Student student)
 
         {
+            var currentStudent = student;
+            
+         
             //Get the current player from the Database
             int id = Convert.ToInt32(Session["GameId"]);
             Game currentGame = vl.Games.SingleOrDefault(g => g.GameId == id);
+
+            
+
 
             Session["PalsName"] = student.Password;
             GameViewModel myGame = new GameViewModel();
