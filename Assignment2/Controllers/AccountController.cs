@@ -32,6 +32,7 @@ namespace Assignment2.Controllers
         [HttpPost]
         public ActionResult Create(CreateAccount user)
         {
+
             return RedirectToAction("Login");
         }
 
