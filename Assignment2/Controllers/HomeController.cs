@@ -27,17 +27,14 @@ namespace Assignment2.Controllers
         public ActionResult Game(Student student)
 
         {
-            var currentStudent = student;
-            
-         
-            //Get the current player from the Database
-            int id = Convert.ToInt32(Session["GameId"]);
-            Game currentGame = vl.Games.SingleOrDefault(g => g.GameId == id);
+            //var currentstudent = new Student();
+            ////Get the current player from the Database
+            int id = Convert.ToInt32(Session["StudentID"]);
+            var currentstudent = vl.Students.SingleOrDefault(s=>s.StudentID ==id);
+            Session["StudentID"] = currentstudent.StudentID;
+           
 
-            
-
-
-            Session["PalsName"] = student.Password;
+            //Session["PalsName"] = currentstudent.Password;
             GameViewModel myGame = new GameViewModel();
             Session["Number"] = myGame.Number;
             Session["Number2"] = myGame.Number2;
@@ -53,30 +50,31 @@ namespace Assignment2.Controllers
         {
             Session["Guess"] = game.Guess;
 
-
+            int id = Convert.ToInt32(Session["StudentID"]);
+            var currentstudent = vl.Students.SingleOrDefault(s => s.StudentID == id);
             //Get the current player from the Database
-            //int id = Convert.ToInt32(game.GameId);
-            //Game currentGame = vl.Games.SingleOrDefault(g => g.GameId == id);
 
-            //game.GameId = currentGame.GameId;
+            Game currentGame = new Game();
+
+            currentGame.studentID = currentstudent.StudentID;
 
 
             if (Convert.ToUInt32(Session["Answer"]) == Convert.ToUInt32(Session["Guess"]))
             {
               
                 //add to total correct answers
-                game.TotalCorrect++;
-                //vl.Games.Add(currentGame);
+                currentGame.TotalCorrect++;
+                vl.Games.Add(currentGame);
                 ////save to database
-                //vl.SaveChanges();
-                Session["TotalCorrect"] = game.TotalCorrect;
+                vl.SaveChanges();
+                Session["TotalCorrect"] = currentGame.TotalCorrect;
                 //redirect to winning page with reward
                 return RedirectToAction("Index");
             }
             else
             {   //add to incorrect total answers
-                //currentGame.TotalIncorrect++;
-                //vl.Games.Add(currentGame);
+                currentGame.TotalIncorrect++;
+                vl.Games.Add(currentGame);
                 //save to database
                 vl.SaveChanges();
                 //replay game

@@ -112,6 +112,7 @@ namespace Assignment2.Controllers
             {
                 Session["StudentID"] = std.StudentID.ToString();
                 Session["FirstName"] = std.FirstName.ToString();
+                
                 return RedirectToAction("Game", "Home");
             }
             

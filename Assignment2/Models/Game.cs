@@ -14,7 +14,6 @@ namespace Assignment2.Models
         public int TotalCorrect { get; set; }
         public int TotalIncorrect { get; set; }
 
-        public Student student;
-        public int studentID;
+        public int studentID { get; set; }
     }
 }
