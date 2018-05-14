@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using Assignment2.Models;
-using Assignment2.ViewModels;
+using TeamNullGame.Models;
+using TeamNullGame.ViewModels;
 
 
-namespace Assignment2.Controllers
+namespace TeamNullGame.Controllers
 {
     public class AccountController : Controller
     {

@@ -1,4 +1,4 @@
-namespace Assignment2.Models
+namespace TeamNullGame.Models
 {
     using System;
     using System.Data.Entity;

@@ -1,12 +1,12 @@
-﻿using Assignment2.Models;
-using Assignment2.ViewModels;
+﻿using TeamNullGame.Models;
+using TeamNullGame.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Assignment2.Controllers
+namespace TeamNullGame.Controllers
 {
     public class HomeController : Controller
     {

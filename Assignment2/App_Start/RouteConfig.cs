@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Assignment2
+namespace TeamNullGame
 {
     public class RouteConfig
     {
