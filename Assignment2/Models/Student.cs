@@ -25,6 +25,8 @@ namespace Assignment2.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        public int GameId { get; set; }
+
         //public virtual ICollection<Student> Students { get; set; }
     }
 }

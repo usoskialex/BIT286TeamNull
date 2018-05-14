@@ -136,6 +136,14 @@
     <Compile Include="Migrations\201805090107477_initial.Designer.cs">
       <DependentUpon>201805090107477_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805112307243_secondary.cs" />
+    <Compile Include="Migrations\201805112307243_secondary.Designer.cs">
+      <DependentUpon>201805112307243_secondary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805131824194_studentgame.cs" />
+    <Compile Include="Migrations\201805131824194_studentgame.Designer.cs">
+      <DependentUpon>201805131824194_studentgame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Game.cs" />
@@ -215,6 +223,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201805090107477_initial.resx">
       <DependentUpon>201805090107477_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805112307243_secondary.resx">
+      <DependentUpon>201805112307243_secondary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805131824194_studentgame.resx">
+      <DependentUpon>201805131824194_studentgame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

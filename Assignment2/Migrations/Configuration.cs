@@ -32,14 +32,16 @@ namespace Assignment2.Migrations
                LoggedIn = false
            });
 
-           context.Students.AddOrUpdate(m => m.StudentID,
+            context.Students.AddOrUpdate(m => m.StudentID,
 
-           new Student()
+            new Student()
             {
                 StudentID = 1,
                 FirstName = "Buddy",
                 LastName = "Friend",
                 Password = "Spot"
+ 
+               
             },
 
             new Student()

@@ -30,9 +30,10 @@ namespace Assignment2.Controllers
 
         //After student creates their account, will redirect to Login page
         [HttpPost]
-        public ActionResult Create(CreateAccount user)
+        public ActionResult Create(Student student)
         {
-
+            db.Students.Add(student);
+            db.SaveChanges();
             return RedirectToAction("Login");
         }
 
@@ -111,6 +112,7 @@ namespace Assignment2.Controllers
             {
                 Session["StudentID"] = std.StudentID.ToString();
                 Session["FirstName"] = std.FirstName.ToString();
+                
                 return RedirectToAction("Game", "Home");
             }
             
