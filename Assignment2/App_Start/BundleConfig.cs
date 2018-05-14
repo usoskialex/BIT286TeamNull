@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Assignment2
+namespace TeamNullGame
 {
     public class BundleConfig
     {

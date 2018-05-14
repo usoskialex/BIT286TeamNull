@@ -1,4 +1,4 @@
-namespace Assignment2.Migrations
+namespace TeamNullGame.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
