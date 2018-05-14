@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Assignment2.Models
+namespace TeamNullGame.Models
 {
     public class User
     {

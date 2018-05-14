@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Assignment2.ViewModels
+namespace TeamNullGame.ViewModels
 {
     public class CreateAccount
     {
