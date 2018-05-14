@@ -3,14 +3,14 @@ namespace TeamNullGame.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class studentgame : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
             DropForeignKey("dbo.Students", "Student_StudentID", "dbo.Students");
             DropIndex("dbo.Students", new[] { "Student_StudentID" });
-            AddColumn("dbo.Games", "studentID", c => c.Int(nullable: false));
-            AddColumn("dbo.Students", "GameId", c => c.Int(nullable: false));
+            //AddColumn("dbo.Games", "studentID", c => c.Int(nullable: false));
+            //AddColumn("dbo.Students", "GameId", c => c.Int(nullable: false));
             DropColumn("dbo.Students", "Student_StudentID");
         }
         
