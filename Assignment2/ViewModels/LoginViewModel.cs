@@ -9,7 +9,7 @@ namespace TeamNullGame.ViewModels
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "First Name")]
+        [Display(Name = "Email")]
         public string UserName { get; set; } 
 
         [Required]
