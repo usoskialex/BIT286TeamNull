@@ -14,6 +14,8 @@
             text-align:center;
         }
 
+        
+
     </style>
 </head>
 <body>
@@ -27,7 +29,7 @@
     <h2>Welcome, Teacher!</h2>
     <h2>Login please, using your Email and Password.</h2>
 
-
+    <section id="loginForm">
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -62,6 +64,7 @@
             </div>
         </div>
     }
+    </section>
 </body>
 
     @section Scripts {

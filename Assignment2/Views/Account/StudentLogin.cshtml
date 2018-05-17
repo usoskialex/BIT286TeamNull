@@ -5,34 +5,52 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Student Login Page</title>
+    <!--link for the bootstraps-->
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <!-- link for the google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Nunito|Barrio" rel="stylesheet" />
+
     <style type="text/css">
+
         body {
-        background-color: lightgrey;
+            background-color: lightgrey;
         }
 
-        h2 {
-        text-align: center;
+        h1 {
+            text-align: center;
+            color: red;
+            letter-spacing: 3px;
+            font-family: Barrio;
         }
 
         #Layer_1 {
-        margin-top: 10px;
-        max-width: 40%;
-        padding-left: 10%;
+            margin-top: 10px;
+            max-width: 25%;
+            padding-left: 10%;
         }
 
         .block {
-        display: -webkit-inline-box;
+            display: -webkit-inline-box;
         }
 
         .block a {
-        margin-left: 20px;
+            margin-left: 20px;
+        }
+
+        .jumbotron {
+            padding: 30px;
+            margin-bottom: 30px;
+            font-size: 21px;
+            font-weight: 200;
+            line-height: 2.1428571435;
+            color: inherit;
+            background-color: #eeeeee;
         }
 
 
     </style>
 </head>
 <body>
-
     <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
     <!-- Created with Inkscape (http://www.inkscape.org/) -->
     <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" xml:space="preserve" version="1.0" viewBox="0 0 261.052 282.556" inkscape:version="0.91 r13725">
@@ -1240,10 +1258,10 @@
     @{
         ViewBag.Title = "Student Login";
     }
+    <div class="jumbotron">
+        <h1>Student Login</h1>
 
-    <h2>Student Login</h2>
-
-    @using (Html.BeginForm())
+        @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
 
@@ -1281,7 +1299,8 @@
             <div> @Html.ActionLink("New Student", "Create")</div>
             <div> @Html.ActionLink("Back to List", "Index")</div>
         </div>
-    }
+}
+    </div>
 </body>
 
 
