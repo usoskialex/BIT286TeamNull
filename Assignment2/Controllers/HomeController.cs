@@ -69,7 +69,7 @@ namespace TeamNullGame.Controllers
                 vl.SaveChanges();
                 Session["TotalCorrect"] = currentGame.TotalCorrect;
                 //redirect to winning page with reward
-                return RedirectToAction("Index");
+                return View();
             }
             else
             {   //add to incorrect total answers
@@ -77,6 +77,7 @@ namespace TeamNullGame.Controllers
                 vl.Games.Add(currentGame);
                 //save to database
                 vl.SaveChanges();
+                Session["TotalIncorrect"] = currentGame.TotalIncorrect;
                 //replay game
                 ViewBag.Message = "Sorry, try again";
                 return View(game);
