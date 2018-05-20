@@ -34,7 +34,7 @@ namespace TeamNullGame.Controllers
         {
             db.Students.Add(student);
             db.SaveChanges();
-            return RedirectToAction("Login");
+            return RedirectToAction("StudentLogin");
         }
 
         [HttpGet] //prepare data for the view for the teacher
