@@ -28,6 +28,7 @@ namespace TeamNullGame.Controllers
 
         {
             GameViewModel myGame = new GameViewModel();
+           
             //Game currentGame = new Game();
             //var currentstudent = new Student();
             ////Get the current player from the Database
@@ -41,14 +42,6 @@ namespace TeamNullGame.Controllers
             Session["Number3"] = myGame.Number3;
             Session["Number4"] = myGame.Number4;
             Session["Answer"] = myGame.Answer;
-
-       
-
-            //int gameid = Convert.ToInt32(Session["GameId"]);
-            //var currentgame = vl.Games.SingleOrDefault(g => g.GameId == currentstudent.GameId);
-           
-
-            //Session["PalsName"] = currentstudent.Password;
 
             return View(myGame);
 
@@ -91,8 +84,7 @@ namespace TeamNullGame.Controllers
 
                 //add to total correct answers
                 currentGame.TotalCorrect++;
-                //vl.Games.Add(currentGame);
-                ////save to database
+   
                 vl.SaveChanges();
                 Session["TotalCorrect"] = currentGame.TotalCorrect;
                 ModelState.Clear();
@@ -102,8 +94,7 @@ namespace TeamNullGame.Controllers
             else
             {   //add to incorrect total answers
                 currentGame.TotalIncorrect++;
-                //vl.Games.Add(currentGame);
-                //save to database
+
                 vl.SaveChanges();
                 Session["TotalIncorrect"] = currentGame.TotalIncorrect;
                 //replay game
