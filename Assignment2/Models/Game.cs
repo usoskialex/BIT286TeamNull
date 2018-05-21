@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Assignment2.Models
+namespace TeamNullGame.Models
 {
     public class Game
     {
@@ -14,7 +14,6 @@ namespace Assignment2.Models
         public int TotalCorrect { get; set; }
         public int TotalIncorrect { get; set; }
 
-        public Student student;
-        public int studentID;
+        public int studentID { get; set; }
     }
 }

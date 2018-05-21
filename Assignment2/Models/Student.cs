@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Assignment2.Models
+namespace TeamNullGame.Models
 {
     public class Student
     {
@@ -24,6 +24,10 @@ namespace Assignment2.Models
         [Display(Name = "Pal's Name")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public int GameId { get; set; }
+
+        public virtual Game game { get; set; }
 
         //public virtual ICollection<Student> Students { get; set; }
     }

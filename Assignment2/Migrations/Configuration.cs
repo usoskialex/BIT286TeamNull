@@ -1,19 +1,19 @@
-namespace Assignment2.Migrations
+namespace TeamNullGame.Migrations
 {
-    using Assignment2.Models;
+    using TeamNullGame.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Assignment2.Models.VisitorLogContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<TeamNullGame.Models.VisitorLogContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Assignment2.Models.VisitorLogContext context)
+        protected override void Seed(TeamNullGame.Models.VisitorLogContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -32,14 +32,16 @@ namespace Assignment2.Migrations
                LoggedIn = false
            });
 
-           context.Students.AddOrUpdate(m => m.StudentID,
+            context.Students.AddOrUpdate(m => m.StudentID,
 
-           new Student()
+            new Student()
             {
                 StudentID = 1,
                 FirstName = "Buddy",
                 LastName = "Friend",
                 Password = "Spot"
+ 
+               
             },
 
             new Student()

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Assignment2.ViewModels
+namespace TeamNullGame.ViewModels
 {
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "First Name")]
+        [Display(Name = "Email")]
         public string UserName { get; set; } 
 
         [Required]

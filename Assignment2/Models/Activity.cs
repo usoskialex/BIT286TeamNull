@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace Assignment2.Models
+namespace TeamNullGame.Models
 {
     public class Activity
     {

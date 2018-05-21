@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using Assignment2.Models;
-using Assignment2.ViewModels;
+using TeamNullGame.Models;
+using TeamNullGame.ViewModels;
 
 
-namespace Assignment2.Controllers
+namespace TeamNullGame.Controllers
 {
     public class AccountController : Controller
     {
@@ -34,7 +34,7 @@ namespace Assignment2.Controllers
         {
             db.Students.Add(student);
             db.SaveChanges();
-            return RedirectToAction("Login");
+            return RedirectToAction("StudentLogin");
         }
 
         [HttpGet] //prepare data for the view for the teacher
@@ -112,6 +112,7 @@ namespace Assignment2.Controllers
             {
                 Session["StudentID"] = std.StudentID.ToString();
                 Session["FirstName"] = std.FirstName.ToString();
+                
                 return RedirectToAction("Game", "Home");
             }
             
@@ -124,6 +125,25 @@ namespace Assignment2.Controllers
             }
 
         }
+
+        //[HttpGet]
+        //public ActionResult PasswordReset()
+        //{
+        //    return View();
+        //}
+
+        //Password reset for the student
+        //[HttpPost]
+        //public ActionResult PasswordReset()
+        //{
+        //    UserManager<IdentityUser> userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>());
+
+        //    userManager.RemovePassword(StudentID);
+
+        //    userManager.AddPassword(StudentID, newPassword);
+
+        //    return View("StudentLogin");
+        //}
 
 
         private User SessionUser() //storing temp user in session

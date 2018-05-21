@@ -1,4 +1,4 @@
-﻿@model Assignment2.ViewModels.CreateAccount
+﻿@model TeamNullGame.ViewModels.CreateAccount
 <!DOCTYPE html>
 
 <html>
@@ -23,7 +23,7 @@
     <h2>Create an Account</h2>
 
     @using (Html.BeginForm())
-    {
+        {
         <div>
             @Html.LabelFor(m => m.FirstName)
             @Html.Editor("FirstName")
@@ -34,17 +34,17 @@
         </div>
         <div>
             @Html.LabelFor(m => m.Password)
-            @Html.Editor("PalsName")
+            @Html.Editor("Password")
         </div>
 
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Submit" class="btn btn-default" />
         </div>
-        }
 
     <div>
         @Html.ActionLink("Return to Login", "Login")
     </div>
+        }
 </body>
 
 @section Scripts {
