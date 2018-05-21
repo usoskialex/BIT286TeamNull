@@ -16,6 +16,20 @@ namespace TeamNullGame.Controllers
             return View();
         }
 
+        public ActionResult Loss()
+        {
+            return View();
+        
+        }
+        [HttpPost]
+        public ActionResult Loss(GameViewModel game)
+        {
+            int id = Convert.ToInt32(Session["StudentID"]);
+            var currentstudent = vl.Students.SingleOrDefault(s => s.StudentID == id);
+            Session["StudentID"] = currentstudent.StudentID;
+
+            return RedirectToAction("Game");
+        }
         [HttpPost]
         public ActionResult Index(GameViewModel game)
         {
@@ -103,7 +117,7 @@ namespace TeamNullGame.Controllers
                 //replay game
                 ModelState.Clear();
                 ViewBag.Message = "Sorry, try again";
-                return View();
+                return RedirectToAction("Loss", "Home");
             }
 
 
