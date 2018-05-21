@@ -19,7 +19,10 @@ namespace TeamNullGame.Controllers
         [HttpPost]
         public ActionResult Index(GameViewModel game)
         {
-            
+            int id = Convert.ToInt32(Session["StudentID"]);
+            var currentstudent = vl.Students.SingleOrDefault(s => s.StudentID == id);
+            Session["StudentID"] = currentstudent.StudentID;
+
             return RedirectToAction("Game");
         }
 
@@ -89,7 +92,7 @@ namespace TeamNullGame.Controllers
                 Session["TotalCorrect"] = currentGame.TotalCorrect;
                 ModelState.Clear();
                 //redirect to winning page with reward
-                return View();
+                return RedirectToAction("Index","Home");
             }
             else
             {   //add to incorrect total answers
