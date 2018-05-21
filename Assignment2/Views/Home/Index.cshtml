@@ -1,19 +1,16 @@
 ﻿@model TeamNullGame.Models.Game
 
-@*@{
-    ViewBag.Title = "H";
-}*@
 
-    <div><h1>Great Work!</h1></div>
+
+    <div><h1>Great Work @Session["FirstName"] !</h1></div>
     @{Html.BeginForm("Index", "Home", FormMethod.Post);
-   <p>     You have  @Session["TotalCorrect"] gold star</p>
 
-
+<div id="right" class="gameover">You have @Session["TotalCorrect"] gold stars</div>
         for (int i = 1; i <= Convert.ToInt32(Session["TotalCorrect"]); i++)
         {
 
-            <img src="~/Images/star.jpg" height="100" width="100" style="display: inline-block" alt="star" />
-            }
+
+            <span> <img src="~/Images/star.jpg" height="100" width="100" style="display: inline-block" alt="star" /> </span>
         }
 <div class="large">
 
@@ -22,3 +19,4 @@
         
     
 </div>
+        }

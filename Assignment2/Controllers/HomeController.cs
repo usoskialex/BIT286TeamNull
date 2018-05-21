@@ -16,10 +16,27 @@ namespace TeamNullGame.Controllers
             return View();
         }
 
+        public ActionResult Loss()
+        {
+            return View();
+        
+        }
+        [HttpPost]
+        public ActionResult Loss(GameViewModel game)
+        {
+            int id = Convert.ToInt32(Session["StudentID"]);
+            var currentstudent = vl.Students.SingleOrDefault(s => s.StudentID == id);
+            Session["StudentID"] = currentstudent.StudentID;
+
+            return RedirectToAction("Game");
+        }
         [HttpPost]
         public ActionResult Index(GameViewModel game)
         {
-            
+            int id = Convert.ToInt32(Session["StudentID"]);
+            var currentstudent = vl.Students.SingleOrDefault(s => s.StudentID == id);
+            Session["StudentID"] = currentstudent.StudentID;
+
             return RedirectToAction("Game");
         }
 
@@ -28,6 +45,7 @@ namespace TeamNullGame.Controllers
 
         {
             GameViewModel myGame = new GameViewModel();
+           
             //Game currentGame = new Game();
             //var currentstudent = new Student();
             ////Get the current player from the Database
@@ -41,14 +59,6 @@ namespace TeamNullGame.Controllers
             Session["Number3"] = myGame.Number3;
             Session["Number4"] = myGame.Number4;
             Session["Answer"] = myGame.Answer;
-
-       
-
-            //int gameid = Convert.ToInt32(Session["GameId"]);
-            //var currentgame = vl.Games.SingleOrDefault(g => g.GameId == currentstudent.GameId);
-           
-
-            //Session["PalsName"] = currentstudent.Password;
 
             return View(myGame);
 
@@ -91,25 +101,23 @@ namespace TeamNullGame.Controllers
 
                 //add to total correct answers
                 currentGame.TotalCorrect++;
-                //vl.Games.Add(currentGame);
-                ////save to database
+   
                 vl.SaveChanges();
                 Session["TotalCorrect"] = currentGame.TotalCorrect;
                 ModelState.Clear();
                 //redirect to winning page with reward
-                return View();
+                return RedirectToAction("Index","Home");
             }
             else
             {   //add to incorrect total answers
                 currentGame.TotalIncorrect++;
-                //vl.Games.Add(currentGame);
-                //save to database
+
                 vl.SaveChanges();
                 Session["TotalIncorrect"] = currentGame.TotalIncorrect;
                 //replay game
                 ModelState.Clear();
                 ViewBag.Message = "Sorry, try again";
-                return View();
+                return RedirectToAction("Loss", "Home");
             }
 
 
