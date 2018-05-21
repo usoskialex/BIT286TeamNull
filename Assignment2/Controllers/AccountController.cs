@@ -126,6 +126,25 @@ namespace TeamNullGame.Controllers
 
         }
 
+        //[HttpGet]
+        //public ActionResult PasswordReset()
+        //{
+        //    return View();
+        //}
+
+        //Password reset for the student
+        //[HttpPost]
+        //public ActionResult PasswordReset()
+        //{
+        //    UserManager<IdentityUser> userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>());
+
+        //    userManager.RemovePassword(StudentID);
+
+        //    userManager.AddPassword(StudentID, newPassword);
+
+        //    return View("StudentLogin");
+        //}
+
 
         private User SessionUser() //storing temp user in session
         {

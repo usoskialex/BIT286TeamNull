@@ -27,8 +27,11 @@
             color: darkred;
             padding: 10px;
         }
-        .right{
-            float:right;
+
+        .svgdisp{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
         }
     </style>
 </head>
@@ -49,8 +52,8 @@
         {
             for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
             {
-                Session["name"] = "fish pals";
-                <img src="~/Images/fish.jpg" height="100" width="100" style="display: inline-block" alt="fish" />
+                Session["name"] = "rabbit pals";
+                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/rabbit.svg")))</div>
             }
 
         }
@@ -61,7 +64,7 @@
             {
                 Session["name"] = "cat pals";
 
-                <span><img src="~/Images/cat.jpg" height="100" width="100" style="display: inline-block" alt="cat" /></span>@*}*@
+                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/cat.svg")))</div>@*}*@
             }
         }
         else if (Convert.ToInt32(Session["Number"]) == 3)
@@ -69,17 +72,17 @@
             for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
             {
                 Session["name"] = "Giraffe pals";
-
-                <span> <img src="~/Images/giraffe.jpg" height="100" width="100" style="display: inline-block" alt="giraffe" /></span>
+              
+                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/giraffe-1232939.svg")))</div>
             }
         }
         else if (Convert.ToInt32(Session["Number"]) == 4)
         {
             for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
             {
-                Session["name"] = "turtle pals";
+                Session["name"] = "penguin pals";
 
-                <span> <img src="~/Images/turtle.jpg" height="100" width="100" style="display: inline-block" alt="turtle" /> </span>
+                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/penguin-154740.svg")))</div>
             }
 
         }
@@ -90,49 +93,43 @@
             @Session["Number2"] @Session["name"]
         </div>
 
-       <div class="large">+</div>        
-    @*<div id="right" class="gameover">@Session["TotalCorrect"]</div> 
-      for (int i = 1; i <= Convert.ToInt32(Session["TotalCorrect"]); i++)
-      {
-      
+        <div class="large">+</div>
 
-      <span> <img src="~/Images/star.jpg" height="100" width="100" style="display: inline-block" alt="star" /> </span>
-      }*@
-    
-
+        @*<div>"Model Number is "@Session["Number3"]</div>*@
 
         if (Convert.ToInt32(Session["Number3"]) == 1)
         {
             for (int i = 1; i <= Convert.ToInt32(Session["Number4"]); i++)
             {
                 Session["name"] = "dog pals"; ;
-                <img src="~/Images/dog.jpg" height="100" width="100" style="display: inline-block" alt="dog" />}
-
+                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/dog.svg")))</div>
+            }
         }
 
         else if (Convert.ToInt32(Session["Number3"]) == 2)
         {
             for (int i = 1; i <= Convert.ToInt32(Session["Number4"]); i++)
             {
-                Session["name"] = "dolphin pals";
-                <span><img src="~/Images/dolphin.jpg" height="100" width="100" style="display: inline-block" alt="dolphin" /></span>@*}*@
+                Session["name"] = "toucan pals";
+                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/final864-toucan-jedi.svg")))</div>
+            
             }
-        }
+        }   
         else if (Convert.ToInt32(Session["Number3"]) == 3)
         {
             for (int i = 1; i <= Convert.ToInt32(Session["Number4"]); i++)
             {
-                Session["name"] = "frog pals";
+                Session["name"] = "monkey pals";
 
-                <span> <img src="~/Images/frog.jpg" height="100" width="100" style="display: inline-block" alt="frog" /></span>
+                <div class="svgdisp"> @Html.Raw(File.ReadAllText(Server.MapPath("~/Images/final72-cartoon-monkey.svg")))</div>
             }
         }
         else if (Convert.ToInt32(Session["Number3"]) == 4)
         {
             for (int i = 1; i <= Convert.ToInt32(Session["Number4"]); i++)
             {
-                Session["name"] = "turtle pals";
-                <span> <img src="~/Images/turtle.jpg" height="100" width="100" style="display: inline-block" alt="turtle" /> </span>
+                Session["name"] = "dino pals";
+                <div class="svgdisp"> @Html.Raw(File.ReadAllText(Server.MapPath("~/Images/final364-rawr-dinosaur.svg"))) </div>
             }
 
         }
@@ -151,9 +148,10 @@
             <input type="submit" value="submit" class=" btn btn-group-lg" />
         </span>
 
- 
-        @*<div class="gameover">@ViewBag.Message</div>*@
-
+        <div class="gameover">@Session["TotalCorrect"]</div>
+        <div class="gameover">@Session["TotalIncorrect"]</div>
+        <div class="gameover">@ViewBag.Message</div>
+        @*<div>@Session["Answer"]+Total Animal Friends</div>*@
 
 
     }
