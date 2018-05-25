@@ -155,6 +155,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\candy.jpg" />
     <Content Include="Images\Cat.jpg" />
     <Content Include="Images\Dog.jpg" />
     <Content Include="Images\dolphin.jpg" />
@@ -195,11 +196,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Home\Game.cshtml" />
     <Content Include="Views\Account\StudentLogin.cshtml" />
     <Content Include="Views\Home\Loss.cshtml" />
+    <Content Include="Views\Account\Results.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
