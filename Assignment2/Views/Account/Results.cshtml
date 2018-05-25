@@ -1,4 +1,45 @@
 ﻿@model IEnumerable<TeamNullGame.Models.Game>
+    <html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Game</title>
+    <style type="text/css">
+        body {
+            /*background-color: lightslategray;*/
+            background-image:url('../../Images/chalkboard.jpg');
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:cover;
+           
+            
+        }
+
+        .center {
+            text-align: center;
+            font-size: 42px;
+            color: midnightblue;
+        }
+
+        .large {
+            font-size: 38px;
+            color: darkblue;
+        }
+
+
+        .gameover {
+            font: bold 42px san-serif;
+            color: darkred;
+            padding: 10px;
+        }
+
+        .svgdisp{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
 
 @{
     ViewBag.Title = "Results";
