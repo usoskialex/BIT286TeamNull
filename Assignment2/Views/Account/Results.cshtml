@@ -1,0 +1,86 @@
+﻿@model IEnumerable<TeamNullGame.Models.Game>
+    <html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Game</title>
+    <style type="text/css">
+        body {
+            /*background-color: lightslategray;*/
+            background-image:url('../../Images/chalkboard.jpg');
+            background-repeat:no-repeat;
+            background-position:center;
+            background-size:cover;
+           
+            
+        }
+
+        .center {
+            text-align: center;
+            font-size: 42px;
+            color: midnightblue;
+        }
+
+        .large {
+            font-size: 38px;
+            color: darkblue;
+        }
+
+
+        .gameover {
+            font: bold 42px san-serif;
+            color: darkred;
+            padding: 10px;
+        }
+
+        .svgdisp{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+@{
+    ViewBag.Title = "Results";
+}
+
+<h2>Results</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalCorrect)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalIncorrect)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.studentID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalCorrect)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalIncorrect)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.studentID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GameId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GameId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GameId })
+        </td>
+    </tr>
+}
+
+</table>

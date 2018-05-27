@@ -15,5 +15,7 @@ namespace TeamNullGame.Models
         public int TotalIncorrect { get; set; }
 
         public int studentID { get; set; }
+
+        public Student student;
     }
 }

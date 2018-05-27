@@ -15,9 +15,9 @@ namespace TeamNullGame.Controllers
         VisitorLogContext db = new VisitorLogContext();
 
         // GET: Account
-        public ActionResult Index()
+        public ActionResult Results()
         {
-            return View(db.Activities);
+            return View(db.Games);
         }
 
         //Get's the Create Student Page
@@ -79,7 +79,7 @@ namespace TeamNullGame.Controllers
 
                 Session["TempUser"] = savedUser;
 
-                return View("Index", db.Activities); 
+                return View("Results", db.Games); 
             }
             else
             {

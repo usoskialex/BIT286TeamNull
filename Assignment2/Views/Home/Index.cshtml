@@ -1,22 +1,60 @@
 ﻿@model TeamNullGame.Models.Game
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Game</title>
+    <style type="text/css">
+        body {
+            /*background-color: lightslategray;*/
+            background-image: url('../../Images/chalkboard.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
 
+        .center {
+            text-align: center;
+            font-size: 42px;
+            color: midnightblue;
+        }
+
+        .large {
+            font-size: 38px;
+            color: darkblue;
+        }
+
+
+        .gameover {
+            font: bold 42px san-serif;
+            color: darkblue;
+            padding: 10px;
+        }
+
+        .svgdisp {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
 
     <div><h1>Great Work @Session["FirstName"] !</h1></div>
     @{Html.BeginForm("Index", "Home", FormMethod.Post);
 
-<div id="right" class="gameover">You have @Session["TotalCorrect"] gold stars</div>
+        <div id="right" class="gameover">You have @Session["TotalCorrect"] gold stars</div>
         for (int i = 1; i <= Convert.ToInt32(Session["TotalCorrect"]); i++)
         {
 
 
-            <span> <img src="~/Images/star.jpg" height="100" width="100" style="display: inline-block" alt="star" /> </span>
+            <span> <img src="~/Images/star2.jpg" height="100" width="100" style="display: inline-block" alt="star" /> </span>
         }
-<div class="large">
+        <div class="large">
 
-        
+
             <input type="submit" value="Play Again" class="btn btn-default" />
-        
-    
-</div>
-        }
+
+
+        </div>
+    }
