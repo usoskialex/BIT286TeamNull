@@ -132,9 +132,9 @@ namespace TeamNullGame.Controllers
         //    return View();
         //}
 
-        //Password reset for the student
+        ////Password reset for the student
         //[HttpPost]
-        //public ActionResult PasswordReset()
+        //public ActionResult PasswordReset(Student user)
         //{
         //    UserManager<IdentityUser> userManager = new UserManager<IdentityUser>(new UserStore<IdentityUser>());
 
