@@ -27,8 +27,7 @@ namespace TeamNullGame.Models
 
         public int GameId { get; set; }
 
-        public virtual Game game { get; set; }
 
-        //public virtual ICollection<Student> Students { get; set; }
+
     }
 }

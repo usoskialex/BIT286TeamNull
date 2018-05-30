@@ -16,7 +16,10 @@ namespace TeamNullGame.Controllers
 
         // GET: Account
         public ActionResult Results()
+
         {
+            
+            
             return View(db.Games);
         }
 

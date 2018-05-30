@@ -16,6 +16,6 @@ namespace TeamNullGame.Models
 
         public int studentID { get; set; }
 
-        public Student student;
+        public virtual Student student { get; set; }
     }
 }
