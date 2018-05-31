@@ -132,10 +132,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805141946336_Initial.cs" />
-    <Compile Include="Migrations\201805141946336_Initial.Designer.cs">
-      <DependentUpon>201805141946336_Initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Game.cs" />
@@ -160,7 +156,6 @@
     <Content Include="Images\color.jpg" />
     <Content Include="Images\Dog.jpg" />
     <Content Include="Images\dolphin.jpg" />
-    <Content Include="Images\fish.jpg" />
     <Content Include="Images\frog.jpg" />
     <Content Include="Images\giraffe.jpg" />
     <Content Include="Images\hippo.jpg" />
@@ -171,6 +166,7 @@
     <Content Include="ReadMe.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\MathGameTeamNull - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -215,11 +211,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805141946336_Initial.resx">
-      <DependentUpon>201805141946336_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
