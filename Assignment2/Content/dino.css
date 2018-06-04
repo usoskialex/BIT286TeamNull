@@ -1,0 +1,111 @@
+/*dino*/
+/*body*/
+#Layer_1 {
+    width: 50%;
+    height: 50%;
+    position: sticky;
+    padding-top: 5%;
+    margin-left: 25%;
+}
+
+/*head*/
+#g265:hover {
+    opacity: 1;
+    transform: scale(1) rotate(1deg);
+}
+
+
+
+/*nose*/
+svg:hover #path2398_2_ {
+    fill: #e59e9e;
+}
+svg:hover #path2412_1_ {
+    fill: #e59e9e;
+}
+
+/*horse hair*/
+svg:hover .st1 {
+    fill: gold;
+}
+
+svg:hover .st2 {
+    fill: yellow;
+}
+
+svg:hover .st3 {
+    fill: #425565;
+}
+
+svg:hover .st4 {
+    fill: #5c768d;
+}
+
+svg:hover .st5 {
+    fill: #66a4d9;
+}
+
+svg:hover .st6 {
+    fill: blue;
+}
+
+/*moving horse*/
+#Layer_2:hover {
+    position: relative; 
+    left: -100px;
+}
+
+/*text animation*/
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes logo {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+/* Standard syntax */
+@keyframes logo {
+    from {background-color: deepskyblue;}
+    to {background-color: whitesmoke;}
+}
+
+/* changing color header */
+.header {
+    animation-name: logo;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/* Spinner */
+#h1style {
+    font-family: 'Pangolin', cursive;
+    text-align: center;
+    font-size: 56px;
+}
+
+#button1, #button2, #button3 {
+    font-size: 16px;
+    font-weight: bold;
+    color:darkmagenta;
+}
+
+#button1:hover, #button2:hover, #button3:hover {
+    box-shadow: 0 0 7px rgba(0,0,0, .9);
+    opacity: .6;
+    transform: scale(.92);
+}
+
+.house, .ping {
+    width:20%;
+}
+
+.links{
+    padding-left: 30%;
+}
+
+img.ping {
+    padding-left: 10%;
+}
+
+img.house {
+    padding-right: 10%;
+}
