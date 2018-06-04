@@ -16,10 +16,7 @@ namespace TeamNullGame.Controllers
 
         // GET: Account
         public ActionResult Results()
-
         {
-            
-            
             return View(db.Games);
         }
 
@@ -128,6 +125,30 @@ namespace TeamNullGame.Controllers
             }
 
         }
+
+
+        [HttpGet]
+        public ActionResult Welcome()
+        {
+            
+            return View();
+        }
+
+        //[HttpPost]
+        //public ActionResult Welcome(string submitButton)
+        //{
+        //    switch (submitButton)
+        //    {
+        //        case "SendT":
+        //            return View("Login");
+        //        case "SendS":
+        //            return View("StudentLogin");
+
+        //    }
+        //    return View();
+        //}
+
+
 
         //[HttpGet]
         //public ActionResult PasswordReset()

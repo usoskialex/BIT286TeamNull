@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Welcome page";
+}
+<!doctype html>
+<hmtl>
+    <head>
+        <meta charset="utf-8">
+        <title>Pushy Buttons</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <!--font-->
+        <link href="https://fonts.googleapis.com/css?family=Lato|Nunito|Barrio" rel="stylesheet" />
+        <!-- Styles -->
+        <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+
+        <!-- Test -->
+        <link href="~/Content/pushy-buttons.min.css" rel="stylesheet" type="text/css">
+
+        <!--particles for fun-->
+        <script type="text/javascript" src="~/Content/app.js"></script>
+        <script type="text/javascript" src="~/Content/particles.js"></script>
+
+        <style>
+
+            body {
+                background:#978181;
+            }
+            h2 {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                text-align: center;
+            }
+
+            div {
+                margin: 0px;
+            }
+
+            #particles-js {
+                height: 100%;
+                width: 100%;
+                background-color: #000000;
+                height: 70vh;
+            }
+
+            .btn {
+                margin-left: 15%;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Welcome to the Addition Game</h2>
+        <button class="btn btn--lg btn--blue" type="submit" onclick="location.href='@Url.Action("StudentLogin", "Account")'">Student Login</button>
+        <button class="btn btn--lg btn--blue" type="submit" onclick="location.href='@Url.Action("Login", "Account")'">Teacher Login</button>
+
+        <div id="particles-js"></div>
+        <script type="text/javascript" src="~/Content/app.js"></script>
+        <script type="text/javascript" src="~/Content/particles.js"></script>
+    </body>
+</html>
+

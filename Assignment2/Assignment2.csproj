@@ -136,6 +136,14 @@
     <Compile Include="Migrations\201805141946336_Initial.Designer.cs">
       <DependentUpon>201805141946336_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805301814263_init.cs" />
+    <Compile Include="Migrations\201805301814263_init.Designer.cs">
+      <DependentUpon>201805301814263_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805301958029_new.cs" />
+    <Compile Include="Migrations\201805301958029_new.Designer.cs">
+      <DependentUpon>201805301958029_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Game.cs" />
@@ -149,8 +157,12 @@
     <Compile Include="ViewModels\StudentLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\app.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\particles.js" />
+    <Content Include="Content\pushy-buttons.min.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -160,7 +172,6 @@
     <Content Include="Images\color.jpg" />
     <Content Include="Images\Dog.jpg" />
     <Content Include="Images\dolphin.jpg" />
-    <Content Include="Images\fish.jpg" />
     <Content Include="Images\frog.jpg" />
     <Content Include="Images\giraffe.jpg" />
     <Content Include="Images\hippo.jpg" />
@@ -171,6 +182,7 @@
     <Content Include="ReadMe.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\AdditionGameTeamNull - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -203,6 +215,7 @@
     <Content Include="Views\Account\StudentLogin.cshtml" />
     <Content Include="Views\Home\Loss.cshtml" />
     <Content Include="Views\Account\Results.cshtml" />
+    <Content Include="Views\Account\Welcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -219,6 +232,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201805141946336_Initial.resx">
       <DependentUpon>201805141946336_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805301814263_init.resx">
+      <DependentUpon>201805301814263_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805301958029_new.resx">
+      <DependentUpon>201805301958029_new.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
