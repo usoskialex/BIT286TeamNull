@@ -10,48 +10,51 @@
     <!-- link for the google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Lato|Nunito|Barrio" rel="stylesheet" />
 
+    <!-- Test -->
+    <link href="~/Content/pushy-buttons.min.css" rel="stylesheet" type="text/css" />
+
     <style type="text/css">
 
         body {
-            background-color: lightgrey;
- 
+        background-color: lightgrey;
+
         }
 
         h1 {
-            text-align: center;
-            color: red;
-            letter-spacing: 3px;
-            font-family: Barrio;
+        text-align: center;
+        color: red;
+        letter-spacing: 3px;
+        font-family: Barrio;
         }
 
         #Layer_1 {
-            margin-top: 10px;
-            max-width: 25%;
-            padding-left: 10%;
+        margin-top: 10px;
+        max-width: 25%;
+        margin-left: 20%;
 
         }
 
         .block {
-            display: -webkit-inline-box;
+        display: -webkit-inline-box;
         }
 
         .block a {
-            margin-left: 20px;
+        margin-left: 20px;
         }
 
         .jumbotron {
-            padding: 30px;
-            margin-bottom: 30px;
-            font-size: 21px;
-            font-weight: 200;
-            line-height: 2.1428571435;
-            color: inherit;
-            @*background-color: #eeeeee;*@
+        padding: 30px;
+        margin-bottom: 30px;
+        font-size: 21px;
+        font-weight: 200;
+        line-height: 2.1428571435;
+        color: inherit;
+        @*background-color: #eeeeee;*@
         background-image:url('../../Images/chalkboard.jpg');
         background-repeat:no-repeat;
         background-position:center;
         backgound-size:auto;
-       
+
         }
 
 
@@ -1297,14 +1300,14 @@
 
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn--lg btn--blue" type="submit" href="#">Login</button>
+                @*<div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Login" class="btn btn-default" />
-                </div>
+                </div>*@
             </div>
         </div>
         <div class="block">
             <div> @Html.ActionLink("New Student", "Create")</div>
-            <div> @Html.ActionLink("Back to List", "Index")</div>
         </div>
 }
     </div>
