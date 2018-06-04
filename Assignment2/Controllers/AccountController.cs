@@ -31,7 +31,7 @@ namespace TeamNullGame.Controllers
         //After student creates their account, will redirect to Login page
         [HttpPost]
         public ActionResult Create(Student student)
-        {
+        {  
             db.Students.Add(student);
             db.SaveChanges();
             return RedirectToAction("StudentLogin");

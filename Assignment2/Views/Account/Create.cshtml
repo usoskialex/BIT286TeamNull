@@ -7,14 +7,23 @@
     <title>Login Page</title>
     <style type="text/css">
         body {
-            background-color: lightgrey;
+            /*background-color: lightslategray;*/
+            background-image: url('../../Images/chalkboard.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         }
 
-        h2 {
-            text-align: center;
+        
+
+        .svgdisp {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
         }
     </style>
 
+   
 </head>
 <body>
     @{
@@ -32,20 +41,27 @@
         <div>
             @Html.LabelFor(m => m.LastName)
             @Html.Editor("LastName")
-        </div>
-        <div>
-            @Html.LabelFor(m => m.Password)
-            @Html.Editor("Password")
-        </div>
+        </div>      
+        <div>Choose your Pet Pal</div>
+        <a href='@Url.Action("Create", "Account")'>
+            <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/cat.svg")))</div>
+            </a>
+            <a href='@Url.Action("Create", "Account")'>
+                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/giraffe-1232939.svg")))</div>
+                </a>
+                <div>
+                    @Html.LabelFor(m => m.Password)
+                    @Html.Editor("Password")
+                </div>
 
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Submit" class="btn btn-default" />
-        </div>
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                </div>
 
-    <div>
-        @Html.ActionLink("Return to Login", "Login")
-    </div>
-        }
+                <div>
+                    @Html.ActionLink("Return to Login", "Login")
+                </div>
+                }
 </body>
 
 @section Scripts {
