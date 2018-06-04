@@ -10,7 +10,6 @@
             background-image: url('../../Images/chalkboard.jpg');
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover;
         }
 
         .center {
@@ -36,25 +35,39 @@
             width: 100px;
             height: 100px;
         }
+
+        .jumbotron {
+            margin: auto;
+            width: 90%;
+            padding: 30px;
+            background-color: transparent;
+            line-height: 2.1428571435;
+            color: inherit;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto;
+        }
     </style>
 </head>
 <body>
-
-    <div><h1>Great Work @Session["FirstName"] !</h1></div>
-    @{Html.BeginForm("Index", "Home", FormMethod.Post);
+    <div class="jumbotron">
+        <div><h1>Great Work @Session["FirstName"] !</h1></div>
+        @{Html.BeginForm("Index", "Home", FormMethod.Post);
 
         <div id="right" class="gameover">You have @Session["TotalCorrect"] gold stars</div>
-        for (int i = 1; i <= Convert.ToInt32(Session["TotalCorrect"]); i++)
-        {
+    for (int i = 1; i <= Convert.ToInt32(Session["TotalCorrect"]); i++)
+    {
 
 
-            <span> <img src="~/Images/star2.jpg" height="100" width="100" style="display: inline-block" alt="star" /> </span>
+        <span> <img src="~/Images/star2.jpg" height="100" width="100" style="display: inline-block" alt="star" /> </span>
+}
+    <div class="large">
+
+
+        <input type="submit" value="Play Again" class="btn btn-default" />
+
+
+    </div>
         }
-        <div class="large">
-
-
-            <input type="submit" value="Play Again" class="btn btn-default" />
-
-
         </div>
-    }
+        </body>

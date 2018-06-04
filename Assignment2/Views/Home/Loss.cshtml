@@ -1,48 +1,64 @@
 ﻿@model TeamNullGame.Models.Game
 <head>
-<style type="text/css">
-    body {
-        /*background-color: lightslategray;*/
-        background-image: url('../../Images/chalkboard.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
+    <style type="text/css">
+        body {
+            /*background-color: lightslategray;*/
+            background-image: url('../../Images/chalkboard.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
 
-    .center {
-        text-align: center;
-        font-size: 42px;
-        color: midnightblue;
-    }
+        .center {
+            text-align: center;
+            font-size: 42px;
+            color: midnightblue;
+        }
 
-    .large {
-        font-size: 38px;
-        color: darkblue;
-    }
+        .large {
+            font-size: 38px;
+            color: darkblue;
+        }
 
 
-    .gameover {
-        font: bold 42px san-serif;
-        color: darkred;
-        padding: 10px;
-    }
+        .gameover {
+            font: bold 42px san-serif;
+            color: darkred;
+            padding: 10px;
+        }
 
-    .svgdisp {
-        display: inline-block;
-        width: 100px;
-        height: 100px;
-    }
-</style>
+        .svgdisp {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+
+        .jumbotron {
+            margin: auto;
+            width: 90%;
+            padding: 30px;
+            background-color: transparent;
+            line-height: 2.1428571435;
+            color: inherit;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto;
+        }
+    </style>
 </head>
-<div><h1> @Session["FirstName"] Sorry, try again</h1></div>
-@{Html.BeginForm("Loss", "Home", FormMethod.Post);
-
-    
-    <div class="large">
-
-
-        <input type="submit" value="Play Again" class="btn btn-default" />
+<body>
+</body>
+<div class="jumbotron">
+    <div><h1> @Session["FirstName"] Sorry, try again</h1></div>
+    @{Html.BeginForm("Loss", "Home", FormMethod.Post);
 
 
-    </div>
-}
+        <div class="large">
+
+
+            <input type="submit" value="Play Again" class="btn btn-default" />
+
+
+        </div>
+    }
+</div>
+</body>

@@ -37,6 +37,14 @@
             width: 100px;
             height: 100px;
         }
+
+        h2, .table {
+            color: azure;
+            margin: auto;
+            width: 80%;
+            font-weight:900;
+            padding-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -47,9 +55,9 @@
 
 <h2>Results</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -84,11 +92,11 @@
             @Html.DisplayFor(modelItem => item.TotalIncorrect)
         </td>
    
-        <td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.GameId }) |
             @Html.ActionLink("Details", "Details", new { id=item.GameId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.GameId })
-        </td>
+        </td>*@
     </tr>
 }
 
