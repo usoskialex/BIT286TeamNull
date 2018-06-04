@@ -66,12 +66,16 @@
                 background-size: auto;
             }
 
-            .image {
-                background-color: transparent;
-            }
-
             img {
                 background-color: transparent;
+                width: 25%;
+            }
+
+            image {
+                margin: auto;
+                width: 100%;
+                border: 3px solid #73AD21;
+                padding: 10px;
             }
         </style>
     </head>
@@ -82,9 +86,9 @@
             <button class="btn btn--lg btn--blue" type="submit" onclick="location.href='@Url.Action("Login", "Account")'">Teacher Login</button>
 
             <div class="image">
-                <img src="~/Images/goatsvg.svg" alt="goat shadow" />
-                <img src="~/Images/PlusSVG.svg" alt="plus image" />
                 <img src="~/Images/dinosaursvg.svg" alt="dino shadow" />
+                <img src="~/Images/PlusSVG.svg" alt="plus image" />
+                <img src="~/Images/goatsvg.svg" alt="goat shadow" />
             </div>
 
 
