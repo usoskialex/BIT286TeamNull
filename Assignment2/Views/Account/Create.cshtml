@@ -18,8 +18,8 @@
 
         .svgdisp {
             display: inline-block;
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
         }
     </style>
 
@@ -27,7 +27,7 @@
 </head>
 <body>
     @{
-        ViewBag.Title = "Alex's change";
+        ViewBag.Title = "Pet Pal's Game";
     }
 
     <h2>Create an Account</h2>
@@ -42,13 +42,9 @@
             @Html.LabelFor(m => m.LastName)
             @Html.Editor("LastName")
         </div>      
-        <div>Choose your Pet Pal</div>
-        <a href='@Url.Action("Create", "Account")'>
-            <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/cat.svg")))</div>
-            </a>
-            <a href='@Url.Action("Create", "Account")'>
-                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/giraffe-1232939.svg")))</div>
-                </a>
+        
+        
+                
                 <div>
                     @Html.LabelFor(m => m.Password)
                     @Html.Editor("Password")
@@ -61,6 +57,10 @@
                 <div>
                     @Html.ActionLink("Return to Login", "Login")
                 </div>
+            <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/cat.svg")))</div>
+            
+            
+                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/giraffe-1232939.svg")))</div>
                 }
 </body>
 
