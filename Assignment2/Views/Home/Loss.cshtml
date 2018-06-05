@@ -34,14 +34,14 @@
     }
 </style>
 </head>
-<div><h1> @Session["FirstName"] Sorry, try again</h1></div>
+<div class="gameover"><h1> Sorry @Session["FirstName"], the correct answer was @Session["Answer"] </h1></div>
 @{Html.BeginForm("Loss", "Home", FormMethod.Post);
 
     
     <div class="large">
 
 
-        <input type="submit" value="Play Again" class="btn btn-default" />
+        <input type="submit" value="Try Again" class="btn btn-default" />
 
 
     </div>
