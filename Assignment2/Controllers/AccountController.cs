@@ -85,7 +85,7 @@ namespace TeamNullGame.Controllers
             {
                 ModelState.Clear(); //to delete the input
                 ModelState.AddModelError("Error", "Sorry. " +
-                    "Check the database for login and password"); //display the error
+                    " Use the link below to create your pal's name and password"); //display the error
                 return View("Login");
 
             }
