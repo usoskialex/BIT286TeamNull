@@ -5,6 +5,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login Page</title>
+
+    <!--link for the bootstraps-->
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <!-- Test -->
+    <link href="~/Content/pushy-buttons.min.css" rel="stylesheet" type="text/css">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Nunito|Barrio" rel="stylesheet" />
+
+
     <style type="text/css">
         body {
             /*background-color: lightslategray;*/
@@ -12,28 +21,57 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+            line-height: 10px;
         }
 
-        
+
 
         .svgdisp {
             display: inline-block;
             width: 200px;
             height: 200px;
         }
+
+        h2 {
+            text-align: center;
+            font-weight: 900;
+            margin-top: 10%;
+            padding-bottom: 20px;
+            font-family: Barrio;
+        }
+
+        .jumbotron {
+            margin: auto;
+            width: 70%;
+            padding: 30px;
+            background-color: transparent;
+            line-height: 2.1428571435;
+            color: inherit;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto;
+        }
+
+        .col-md-offset-2 {
+            display: inline-block;
+        }
+
+        label {
+            line-height: 3;
+        }
     </style>
 
-   
+
 </head>
 <body>
     @{
         ViewBag.Title = "Pet Pal's Game";
     }
+    <div class="jumbotron">
+        <h2>Create an Account</h2>
 
-    <h2>Create an Account</h2>
-
-    @using (Html.BeginForm())
-        {
+        @using (Html.BeginForm())
+    {
         <div>
             @Html.LabelFor(m => m.FirstName)
             @Html.Editor("FirstName")
@@ -41,27 +79,28 @@
         <div>
             @Html.LabelFor(m => m.LastName)
             @Html.Editor("LastName")
-        </div>      
-        
-        
-                
-                <div>
-                    @Html.LabelFor(m => m.Password)
-                    @Html.Editor("Password")
-                </div>
+        </div>
 
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Submit" class="btn btn-default" />
-                </div>
 
-                <div>
-                    @Html.ActionLink("Return to Login", "Login")
-                </div>
-            <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/cat.svg")))</div>
+
+        <div>
+            @Html.LabelFor(m => m.Password)
+            @Html.Editor("Password")
+        </div>
+
+        <div class="col-md-offset-2 col-md-10">
+            <button class="btn btn--lg btn--blue" type="submit" value="Submit" href="#">Submit</button>
             
-            
-                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/giraffe-1232939.svg")))</div>
-                }
+                @Html.ActionLink("Return to Login", "Login")
+        </div>
+        
+        <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/cat.svg")))</div>
+
+
+        <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/giraffe-1232939.svg")))</div>
+       
+}
+    </div>
 </body>
 
 @section Scripts {
