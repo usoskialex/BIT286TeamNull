@@ -5,15 +5,17 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Game</title>
+    <!-- Test -->
+    <link href="~/Content/pushy-buttons.min.css" rel="stylesheet" type="text/css" />
+
+
     <style type="text/css">
         body {
             /*background-color: lightslategray;*/
-            background-image:url('../../Images/chalkboard.jpg');
-            background-repeat:no-repeat;
-            background-position:center;
-            background-size:cover;
-           
-            
+            background-image: url('../../Images/chalkboard.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         }
 
         .center {
@@ -34,10 +36,36 @@
             padding: 10px;
         }
 
-        .svgdisp{
+        .svgdisp {
             display: inline-block;
             width: 100px;
             height: 100px;
+        }
+
+        h1 {
+            margin: auto;
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        svg {
+            width: 90%;
+        }
+
+        .textbut {
+            display: inline-block;
+        }
+
+        .jumbotron {
+            margin: auto;
+            width: 90%;
+            padding: 30px;
+            background-color: darkolivegreen;
+            line-height: 2.1428571435;
+            color: inherit;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto;
         }
     </style>
 </head>
@@ -45,120 +73,117 @@
     @{
         ViewBag.Title = "Game";
     }
-
-    <h1 class="center">@Session["FirstName"] Let's Play a Game! </h1>
-    @{Html.BeginForm("Game", "Home", FormMethod.Post);
-
-
-        @*<div>"Model Number is "@Session["Number"]</div>*@
+    <div class="jumbotron">
+        <h1 class="center">@Session["FirstName"] Let's Play a Game! </h1>
+        @{Html.BeginForm("Game", "Home", FormMethod.Post);
 
 
+            @*<div>"Model Number is "@Session["Number"]</div>*@
 
-        if (Convert.ToInt32(Session["Number"]) == 1)
-        {
-            for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
+
+
+            if (Convert.ToInt32(Session["Number"]) == 1)
             {
-                Session["name"] = "rabbit pals";
-                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/rabbit.svg")))</div>
-            }
-
-        }
-
-        else if (Convert.ToInt32(Session["Number"]) == 2)
-        {
-            for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
-            {
-                Session["name"] = "cat pals";
-
-                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/cat.svg")))</div>@*}*@
-        }
-    }
-    else if (Convert.ToInt32(Session["Number"]) == 3)
-    {
-        for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
-        {
-            Session["name"] = "Giraffe pals";
-       
-                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/giraffe-1232939.svg")))</div>
-                
-                }
-                }
-                else if (Convert.ToInt32(Session["Number"]) == 4)
-                {
                 for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
                 {
-                Session["name"] = "penguin pals";
-
-                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/penguin-154740.svg")))</div>
+                    Session["name"] = "rabbit pals";
+                    <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/rabbit.svg")))</div>
                 }
 
-                }
-                <div>
-                </div>
+            }
 
-                <div class="large">
-                    @Session["Number2"] @Session["name"]
-                </div>
-
-                <div class="large">+</div>
-
-                @*<div>"Model Number is "@Session["Number3"]</div>*@
-
-                if (Convert.ToInt32(Session["Number3"]) == 1)
+            else if (Convert.ToInt32(Session["Number"]) == 2)
+            {
+                for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
                 {
+                    Session["name"] = "cat pals";
+
+                    <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/cat.svg")))</div>@*}*@
+                }
+            }
+            else if (Convert.ToInt32(Session["Number"]) == 3)
+            {
+                for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
+                {
+                    Session["name"] = "Giraffe pals";
+
+                    <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/giraffe-1232939.svg")))</div>
+
+                }
+            }
+            else if (Convert.ToInt32(Session["Number"]) == 4)
+            {
+                for (int i = 1; i <= Convert.ToInt32(Session["Number2"]); i++)
+                {
+                    Session["name"] = "penguin pals";
+
+                    <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/penguin-154740.svg")))</div>
+                }
+
+            }
+            <div>
+            </div>
+
+            <div class="large">
+                @Session["Number2"] @Session["name"]
+            </div>
+
+            <div class="large">+</div>
+
+            @*<div>"Model Number is "@Session["Number3"]</div>*@
+
+            if (Convert.ToInt32(Session["Number3"]) == 1)
+            {
                 for (int i = 1; i <= Convert.ToInt32(Session["Number4"]); i++)
                 {
-                Session["name"] = "dog pals"; ;
-                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/dog.svg")))</div>
+                    Session["name"] = "dog pals"; ;
+                    <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/dog.svg")))</div>
                 }
-                }
+            }
 
-                else if (Convert.ToInt32(Session["Number3"]) == 2)
-                {
+            else if (Convert.ToInt32(Session["Number3"]) == 2)
+            {
                 for (int i = 1; i <= Convert.ToInt32(Session["Number4"]); i++)
                 {
-                Session["name"] = "toucan pals";
-                <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/final864-toucan-jedi.svg")))</div>
+                    Session["name"] = "toucan pals";
+                    <div class="svgdisp">@Html.Raw(File.ReadAllText(Server.MapPath("~/Images/final864-toucan-jedi.svg")))</div>
 
                 }
-                }
-                else if (Convert.ToInt32(Session["Number3"]) == 3)
-                {
+            }
+            else if (Convert.ToInt32(Session["Number3"]) == 3)
+            {
                 for (int i = 1; i <= Convert.ToInt32(Session["Number4"]); i++)
                 {
-                Session["name"] = "monkey pals";
+                    Session["name"] = "monkey pals";
 
-                <div class="svgdisp"> @Html.Raw(File.ReadAllText(Server.MapPath("~/Images/final72-cartoon-monkey.svg")))</div>
+                    <div class="svgdisp"> @Html.Raw(File.ReadAllText(Server.MapPath("~/Images/final72-cartoon-monkey.svg")))</div>
                 }
-                }
-                else if (Convert.ToInt32(Session["Number3"]) == 4)
-                {
+            }
+            else if (Convert.ToInt32(Session["Number3"]) == 4)
+            {
                 for (int i = 1; i <= Convert.ToInt32(Session["Number4"]); i++)
                 {
-                Session["name"] = "dino pals";
-                <div class="svgdisp"> @Html.Raw(File.ReadAllText(Server.MapPath("~/Images/final364-rawr-dinosaur.svg"))) </div>
+                    Session["name"] = "dino pals";
+                    <div class="svgdisp"> @Html.Raw(File.ReadAllText(Server.MapPath("~/Images/final364-rawr-dinosaur.svg"))) </div>
                 }
 
-                }
+            }
 
-                <div class="large">
-                    @Session["Number4"]  @Session["name"]
-                </div>
+            <div class="large">
+                @Session["Number4"]  @Session["name"]
+            </div>
 
-                <div class="large">=</div>
-
-
-
-                <span class="large">
+            <div class="large">=
+                <span class="textbut">
                     @*@Html.Label("Guess", "Guess")*@
                     @Html.TextBox("Guess", "", new { @class = "textbox" })
-                    <input type="submit" value="submit" class=" btn btn-group-lg" />
+                    <button class="btn btn--lg btn--blue" type="submit" value="Submit" href="#">Submit</button>
                 </span>
+            </div>
 
 
-
-
-                }
+        }
+        </div>
 </body>
 </html>
 

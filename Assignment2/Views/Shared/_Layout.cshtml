@@ -7,13 +7,22 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="https://fonts.googleapis.com/css?family=Lato|Nunito|Barrio" rel="stylesheet" />
+    <!--link for the bootstraps-->
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
 
     <style>
         a {
             font-size: 20px;
             font-family: Nunito;
         }
-        
+
+        .glyphicon-copyright-mark {
+            float: right;
+            letter-spacing: 1px;
+            color: silver;
+            font-style:italic;
+            margin-top:1%;
+        }
     </style>
 </head>
 <body>
@@ -31,6 +40,9 @@
                     <li>@Html.ActionLink("Login", "Login", "Account")</li>
                     <li>@Html.ActionLink("StudentLogin", "StudentLogin", "Account")</li>
                 </ul>
+
+                <p class="glyphicon glyphicon-copyright-mark"> TeamNull</p>
+               
             </div>
         </div>
     </div>
