@@ -119,8 +119,8 @@ namespace TeamNullGame.Controllers
             else
             {
                 ModelState.Clear(); //to delete the input
-                ModelState.AddModelError("Error", "Sorry. " +
-                    "Check the database for login and password"); //display the error
+                ModelState.AddModelError("Error", 
+                   "Sorry.The user id or password was incorrect"); //display the error
                 return View("StudentLogin");
             }
 
